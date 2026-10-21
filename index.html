@@ -1,0 +1,3168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BODH 2026 | Building of Digital Horizons — BCA/MCA TCET Mumbai</title>
+  <meta name="description"
+    content="BODH 2026: Building of Digital Horizons — The official digital magazine of the BCA/Computer Department at Thakur College of Engineering & Technology, Mumbai." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'space-dark': '#071633',
+            'card-bg': '#0C2350',
+            'card-border': '#16356B',
+            /* ── Cover-page blue palette (replaces old cyan) ── */
+            'cyan-glow': '#4FC3F7',   /* was #00E5FF */
+            'blue-vivid': '#1565C0',   /* was #3B82F6 */
+            'blue-mid': '#1E88E5',
+            'blue-light': '#64B5F6',
+            'blue-pale': '#BBDEFB',
+            'neon-purple': '#7C3AED',
+            'text-primary': '#F8FAFC',
+            'text-muted': '#94A3B8',
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      /* Updated to cover-page sky-blue palette */
+      --accent: #4FC3F7;
+      --accent2: #1565C0;
+      --mid: #1E88E5;
+      --dark: #071633;
+      --card: #0C2350;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #071633;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #071633;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(66, 165, 245, 0.4);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(66, 165, 245, 0.7);
+    }
+
+    /* ── Cyber grid background ── */
+    .cyber-grid-bg {
+      background-image:
+        linear-gradient(rgba(66, 165, 245, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 165, 245, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* ── Noise overlay ── */
+    .noise::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── Glassmorphism card ── */
+    .glass-card {
+      background: rgba(12, 32, 74, 0.75);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(66, 165, 245, 0.15);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(66, 165, 245, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(66, 165, 245, 0.5);
+      box-shadow: 0 8px 50px rgba(66, 165, 245, 0.15), 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(66, 165, 245, 0.15);
+    }
+
+    /* ── Neon text ── */
+    .neon-text {
+      color: #4FC3F7;
+      text-shadow: 0 0 20px rgba(66, 165, 245, 0.8), 0 0 40px rgba(66, 165, 245, 0.4);
+    }
+
+    .neon-text-blue {
+      color: #1E88E5;
+      text-shadow: 0 0 20px rgba(30, 136, 229, 0.8), 0 0 40px rgba(30, 136, 229, 0.4);
+    }
+
+    /* ── Glow border ── */
+    .glow-border {
+      border: 1px solid rgba(66, 165, 245, 0.4);
+      box-shadow: 0 0 15px rgba(66, 165, 245, 0.2), inset 0 0 15px rgba(66, 165, 245, 0.05);
+    }
+
+    /* ── Hero title animation ── */
+    .hero-title {
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes glowPulse {
+
+      0%,
+      100% {
+        text-shadow: 0 0 30px rgba(66, 165, 245, 0.9), 0 0 60px rgba(66, 165, 245, 0.5), 0 0 100px rgba(66, 165, 245, 0.2);
+      }
+
+      50% {
+        text-shadow: 0 0 50px rgba(66, 165, 245, 1), 0 0 100px rgba(66, 165, 245, 0.7), 0 0 150px rgba(21, 101, 192, 0.4);
+      }
+    }
+
+    /* ── Floating orbs ── */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) scale(1);
+      }
+
+      50% {
+        transform: translateY(-25px) scale(1.05);
+      }
+    }
+
+    /* ── Scan line ── */
+    .scan-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(66, 165, 245, 0.3), transparent);
+      animation: scanLine 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes scanLine {
+      0% {
+        top: -2px;
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        top: 100%;
+        opacity: 0;
+      }
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(7, 18, 42, 0.85);
+      border-bottom: 1px solid rgba(66, 165, 245, 0.12);
+    }
+
+    /* ── Nav links ── */
+    .nav-link {
+      position: relative;
+      color: #94A3B8;
+      transition: color 0.3s;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #4FC3F7;
+      box-shadow: 0 0 8px #4FC3F7;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #4FC3F7;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* ── Section heading rule ── */
+    .section-heading-line {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-heading-line::before,
+    .section-heading-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(66, 165, 245, 0.4), transparent);
+    }
+
+    /* ── Badge chip ── */
+    .badge-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(66, 165, 245, 0.1);
+      border: 1px solid rgba(66, 165, 245, 0.3);
+      color: #4FC3F7;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    /* ── Achievement badge ── */
+    .achievement-badge {
+      background: linear-gradient(135deg, rgba(66, 165, 245, 0.1), rgba(21, 101, 192, 0.1));
+      border: 1px solid rgba(66, 165, 245, 0.2);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    /* ── Profile placeholder ── */
+    .profile-placeholder {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0C2350, #16356B);
+      border: 2px solid rgba(66, 165, 245, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── Decorative corner ── */
+    .corner-tl,
+    .corner-br {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-color: rgba(66, 165, 245, 0.6);
+      border-style: solid;
+    }
+
+    .corner-tl {
+      top: 0;
+      left: 0;
+      border-width: 2px 0 0 2px;
+    }
+
+    .corner-br {
+      bottom: 0;
+      right: 0;
+      border-width: 0 2px 2px 0;
+    }
+
+    /* ── Number badge ── */
+    .number-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(66, 165, 245, 0.2), rgba(21, 101, 192, 0.2));
+      border: 1px solid rgba(66, 165, 245, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #4FC3F7;
+    }
+
+    /* ── Footer gradient ── */
+    .footer-gradient {
+      background: linear-gradient(180deg, #071633 0%, #050E24 100%);
+      border-top: 1px solid rgba(66, 165, 245, 0.12);
+    }
+
+    /* ── Gradient text ── */
+    .gradient-text {
+      background: linear-gradient(135deg, #4FC3F7, #1565C0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Mobile menu ── */
+    #mobile-menu {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(7, 18, 42, 0.97);
+      border-bottom: 1px solid rgba(66, 165, 245, 0.12);
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal-delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    /* ── Particle canvas ── */
+    #particle-canvas {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Vol tag ── */
+    .vol-tag {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: rgba(66, 165, 245, 0.6);
+    }
+
+    /* ── Member card profile ── */
+    .member-profile-placeholder {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #0C2350, #16356B);
+      border: 2px solid rgba(66, 165, 245, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .member-info-chip {
+      background: linear-gradient(135deg, rgba(66, 165, 245, 0.08), rgba(21, 101, 192, 0.08));
+      border: 1px solid rgba(66, 165, 245, 0.18);
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 4.5rem !important;
+      }
+    }
+
+    /* ── Article card ── */
+    .article-card {
+      background: rgba(12, 32, 74, 0.75);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(66, 165, 245, 0.15);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(66, 165, 245, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(79, 195, 247, 0.5);
+      box-shadow: 0 8px 50px rgba(79, 195, 247, 0.18), 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(79, 195, 247, 0.15);
+    }
+
+    .article-img-wrap {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .article-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .article-card:hover .article-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .article-img-placeholder {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #0A1E48, #123A7C);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .article-read-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(79, 195, 247, 0.12), rgba(21, 101, 192, 0.12));
+      border: 1px solid rgba(79, 195, 247, 0.35);
+      color: #4FC3F7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.25s, border-color 0.25s, transform 0.2s;
+      cursor: pointer;
+      margin-top: auto;
+    }
+
+    .article-read-btn:hover {
+      background: rgba(79, 195, 247, 0.2);
+      border-color: rgba(79, 195, 247, 0.7);
+      transform: translateY(-1px);
+    }
+
+    /* ── Article overlay ── */
+    #article-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(5, 14, 36, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    #article-overlay.open {
+      display: flex;
+    }
+
+    #article-overlay-inner {
+      background: rgba(12, 32, 74, 0.95);
+      border: 1px solid rgba(66, 165, 245, 0.25);
+      border-radius: 20px;
+      max-width: 980px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 0 60px rgba(79, 195, 247, 0.12), 0 20px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    #article-overlay-close {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: flex-end;
+      padding: 14px 16px 0;
+      z-index: 10;
+    }
+
+    #article-overlay-close button {
+      background: rgba(79, 195, 247, 0.1);
+      border: 1px solid rgba(79, 195, 247, 0.3);
+      color: #4FC3F7;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    #article-overlay-close button:hover {
+      background: rgba(79, 195, 247, 0.22);
+    }
+
+    #article-overlay-body {
+      padding: 0 32px 32px;
+    }
+
+    .article-overlay-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(79, 195, 247, 0.1);
+      border: 1px solid rgba(79, 195, 247, 0.3);
+      color: #4FC3F7;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+
+    .article-overlay-cover {
+      width: 100%;
+      max-height: min(68vh, 760px);
+      object-fit: contain;
+      object-position: center;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(66, 165, 245, 0.15);
+      background: rgba(3, 10, 25, 0.72);
+    }
+
+    .article-image-link {
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .article-image-link:focus-visible {
+      outline: 2px solid #4FC3F7;
+      outline-offset: 4px;
+      border-radius: 12px;
+    }
+
+    .article-image-hint {
+      margin: -12px 0 18px;
+      color: #94A3B8;
+      font: 500 0.72rem 'Inter', sans-serif;
+      text-align: right;
+    }
+
+    .faculty-modal-photo {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: min(68vh, 760px);
+      object-fit: contain;
+      object-position: center;
+      margin: 0 auto 20px;
+      border: 1px solid rgba(66, 165, 245, 0.15);
+      border-radius: 12px;
+      background: rgba(3, 10, 25, 0.72);
+    }
+
+    .student-achievement-list {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .student-achievement-story {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: center;
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      padding: clamp(2rem, 4vw, 3.25rem) 0;
+      border-bottom: 1px solid rgba(79, 195, 247, 0.2);
+    }
+
+    .student-achievement-story:last-child {
+      border-bottom: 0;
+    }
+
+    .student-achievement-story:nth-child(even) .student-achievement-visual {
+      order: 2;
+    }
+
+    .student-achievement-visual {
+      margin: 0;
+      overflow: hidden;
+      border-left: 3px solid rgba(79, 195, 247, 0.75);
+      background: rgba(5, 14, 36, 0.55);
+    }
+
+    .student-achievement-image {
+      display: block;
+      width: 100%;
+      height: clamp(280px, 34vw, 440px);
+      object-fit: contain;
+      object-position: center;
+      background: rgba(3, 10, 25, 0.72);
+    }
+
+    .student-achievement-copy {
+      padding: clamp(1rem, 2.5vw, 2rem);
+      border-left: 2px solid rgba(79, 195, 247, 0.4);
+      background: linear-gradient(110deg, rgba(30, 86, 151, 0.27), rgba(12, 32, 74, 0.08));
+    }
+
+    .student-achievement-kicker {
+      margin-bottom: 0.65rem;
+      color: #4FC3F7;
+      font: 700 0.68rem 'Montserrat', sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .student-achievement-title {
+      margin-bottom: 0.85rem;
+      color: #F8FAFC;
+      font: 700 clamp(1.25rem, 2.3vw, 1.65rem)/1.3 'Montserrat', sans-serif;
+    }
+
+    .student-achievement-copy p {
+      color: #CBD5E1;
+      font: 400 0.92rem/1.8 'Inter', sans-serif;
+    }
+
+    .student-achievement-result {
+      margin-top: 1rem;
+      color: #4FC3F7 !important;
+      font-weight: 700 !important;
+    }
+
+    @media (max-width: 767px) {
+      .student-achievement-story {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 2rem 0;
+      }
+
+      .student-achievement-story:nth-child(even) .student-achievement-visual {
+        order: 0;
+      }
+
+      .student-achievement-image {
+        height: clamp(230px, 72vw, 420px);
+      }
+
+      .student-achievement-copy {
+        padding: 1.25rem 1rem;
+      }
+
+      #article-overlay-body,
+      #faculty-overlay-body {
+        padding-right: 18px;
+        padding-left: 18px;
+      }
+    }
+
+    .article-overlay-title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.1rem, 3vw, 1.55rem);
+      color: #F8FAFC;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .article-overlay-author {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      color: #4FC3F7;
+      font-weight: 600;
+      margin-bottom: 18px;
+      letter-spacing: 0.04em;
+    }
+
+    .article-overlay-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #94A3B8;
+      line-height: 1.85;
+    }
+
+    .article-overlay-body p {
+      margin-bottom: 14px;
+    }
+
+    .article-overlay-body strong {
+      color: #F8FAFC;
+    }
+
+    .article-overlay-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(79, 195, 247, 0.25), transparent);
+      margin: 20px 0;
+    }
+
+    .article-file-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(21, 101, 192, 0.12));
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      color: #7C3AED;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .article-file-link:hover {
+      background: rgba(124, 58, 237, 0.22);
+      border-color: rgba(124, 58, 237, 0.6);
+    }
+
+    /* ── Faculty Directory & Showcase Styles ── */
+    .faculty-stat-card {
+      background: rgba(12, 32, 74, 0.65);
+      border: 1px solid rgba(79, 195, 247, 0.2);
+      border-radius: 16px;
+      padding: 16px 20px;
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .faculty-stat-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(79, 195, 247, 0.5);
+      box-shadow: 0 8px 30px rgba(79, 195, 247, 0.15);
+    }
+
+    .faculty-filter-btn {
+      padding: 8px 20px;
+      border-radius: 9999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid rgba(79, 195, 247, 0.25);
+      background: rgba(12, 32, 74, 0.6);
+      color: rgba(224, 247, 250, 0.7);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .faculty-filter-btn:hover {
+      color: #FFFFFF;
+      border-color: #4FC3F7;
+      background: rgba(79, 195, 247, 0.15);
+    }
+
+    .faculty-filter-btn.active {
+      color: #050E24;
+      background: linear-gradient(135deg, #4FC3F7, #29B6F6);
+      border-color: #4FC3F7;
+      box-shadow: 0 0 20px rgba(79, 195, 247, 0.5);
+      font-weight: 800;
+    }
+
+    .faculty-profile-img {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(79, 195, 247, 0.4);
+      box-shadow: 0 0 16px rgba(79, 195, 247, 0.25);
+      flex-shrink: 0;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .glass-card:hover .faculty-profile-img {
+      transform: scale(1.05);
+      border-color: #4FC3F7;
+    }
+
+    .faculty-initials-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(79, 195, 247, 0.15), rgba(124, 58, 237, 0.25));
+      border: 2px solid rgba(79, 195, 247, 0.35);
+      box-shadow: 0 0 16px rgba(79, 195, 247, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Orbitron', monospace;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #4FC3F7;
+      flex-shrink: 0;
+    }
+
+    .faculty-card .faculty-profile-img,
+    .faculty-card .faculty-initials-avatar {
+      width: 64px;
+      height: 64px;
+    }
+
+    .faculty-card .faculty-initials-avatar {
+      font-size: 1.2rem;
+    }
+
+    .faculty-card {
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .faculty-card.hidden-card {
+      display: none !important;
+    }
+
+    .faculty-credential-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(79, 195, 247, 0.1), rgba(124, 58, 237, 0.1));
+      border: 1px solid rgba(79, 195, 247, 0.3);
+      color: #4FC3F7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 10px;
+    }
+
+    .faculty-credential-btn:hover {
+      background: rgba(79, 195, 247, 0.22);
+      border-color: #4FC3F7;
+      transform: translateY(-1px);
+      box-shadow: 0 0 12px rgba(79, 195, 247, 0.3);
+    }
+
+    #faculty-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(5, 14, 36, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    #faculty-overlay.open {
+      display: flex;
+    }
+
+    #faculty-overlay-inner {
+      background: rgba(12, 32, 74, 0.96);
+      border: 1px solid rgba(79, 195, 247, 0.35);
+      border-radius: 20px;
+      max-width: 980px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 0 60px rgba(79, 195, 247, 0.18), 0 20px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    #faculty-overlay-close {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: flex-end;
+      padding: 14px 16px 0;
+      z-index: 10;
+    }
+
+    #faculty-overlay-close button {
+      background: rgba(79, 195, 247, 0.1);
+      border: 1px solid rgba(79, 195, 247, 0.3);
+      color: #4FC3F7;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    #faculty-overlay-close button:hover {
+      background: rgba(79, 195, 247, 0.22);
+    }
+
+    #faculty-overlay-body {
+      padding: 0 32px 32px;
+    }
+  </style>
+</head>
+
+<body class="noise cyber-grid-bg relative min-h-screen">
+
+  <!-- ╔══════════════════╗ -->
+  <!-- ║     NAVBAR       ║ -->
+  <!-- ╚══════════════════╝ -->
+  <nav id="navbar" class="navbar fixed top-0 left-0 right-0 z-50 transition-all duration-300" role="navigation"
+    aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+        <!-- Brand -->
+        <a href="#hero" id="nav-brand" class="flex items-center gap-3 group" aria-label="BODH 2026 Home">
+          <div class="relative w-9 h-9 flex items-center justify-center">
+            <svg viewBox="0 0 36 36" fill="none" class="absolute inset-0 w-full h-full">
+              <polygon points="18,2 33,10 33,26 18,34 3,26 3,10" stroke="#4FC3F7" stroke-width="1.5"
+                fill="rgba(79,195,247,0.05)" />
+            </svg>
+            <span class="font-orbitron text-xs font-black text-cyan-glow z-10">B</span>
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="font-montserrat text-text-muted group-hover:text-text-primary transition-colors"
+              style="font-size:0.6rem;letter-spacing:0.15em;font-weight:700;text-transform:uppercase;">MCA
+              DEPARTMENT</span>
+            <span class="font-montserrat font-semibold text-text-primary text-sm" style="letter-spacing:0.05em;">TCET
+              MUMBAI</span>
+          </div>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#students" id="nav-students" class="nav-link">Students</a>
+          <a href="#faculty" id="nav-faculty" class="nav-link">Faculty</a>
+          <a href="#articles" id="nav-articles" class="nav-link">Articles</a>
+          <a href="#committee" id="nav-committee" class="nav-link">Magazine Committee</a>
+          <a href="#footer" id="nav-contact"
+            class="badge-chip hover:bg-cyan-glow hover:text-space-dark transition-all duration-300 cursor-pointer"
+            style="text-decoration:none;">
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            Contact
+          </a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button id="mobile-menu-btn"
+          class="md:hidden p-2 rounded-lg text-text-muted hover:text-cyan-glow transition-colors"
+          aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden" role="menu">
+      <div class="px-6 py-4 flex flex-col gap-5">
+        <a href="#students" class="nav-link py-1" role="menuitem" onclick="closeMobileMenu()">Students</a>
+        <a href="#faculty" class="nav-link py-1" role="menuitem" onclick="closeMobileMenu()">Faculty</a>
+        <a href="#articles" class="nav-link py-1" role="menuitem" onclick="closeMobileMenu()">Articles</a>
+        <a href="#committee" class="nav-link py-1" role="menuitem" onclick="closeMobileMenu()">Magazine Committee</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ╔══════════════════╗ -->
+  <!-- ║      HERO        ║ -->
+  <!-- ╚══════════════════╝ -->
+  <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Floating orbs — sky blue palette -->
+    <div class="orb w-96 h-96 bg-blue-vivid opacity-10" style="top:10%;left:-8%;animation-delay:0s;"></div>
+    <div class="orb w-80 h-80 bg-cyan-glow opacity-8" style="bottom:5%;right:-4%;animation-delay:3s;"></div>
+    <div class="orb w-60 h-60 bg-neon-purple opacity-6" style="top:40%;right:15%;animation-delay:1.5s;"></div>
+
+    <div class="scan-line"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto" style="animation: float 6s ease-in-out infinite;">
+
+      <div class="vol-tag mb-6 tracking-[0.3em] reveal">— VOL 01 · 2026 —</div>
+
+      <!-- Decorative rule -->
+      <div class="flex justify-center items-center gap-4 mb-4 reveal reveal-delay-1">
+        <div class="h-px flex-1 max-w-24" style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.6))">
+        </div>
+        <svg class="w-5 h-5 opacity-60" style="color:#4FC3F7;" viewBox="0 0 20 20" fill="currentColor">
+          <polygon points="10,0 13,7 20,7 14.5,11.5 16.5,19 10,15 3.5,19 5.5,11.5 0,7 7,7" />
+        </svg>
+        <div class="h-px flex-1 max-w-24" style="background:linear-gradient(90deg,rgba(79,195,247,0.6),transparent)">
+        </div>
+      </div>
+
+      <!-- BODH title -->
+      <h1 class="hero-title font-orbitron font-black text-text-primary mb-2 reveal reveal-delay-1"
+        style="font-size:clamp(5rem,16vw,11rem);letter-spacing:-0.02em;line-height:1;">BODH</h1>
+
+      <!-- Year -->
+      <div class="flex justify-center mb-6 reveal reveal-delay-2">
+        <span class="font-orbitron font-bold gradient-text tracking-[0.2em]"
+          style="font-size:clamp(1.8rem,4vw,2.5rem);">2026</span>
+      </div>
+
+      <!-- Subtitle -->
+      <p
+        class="font-montserrat font-semibold text-text-muted uppercase tracking-[0.3em] text-sm md:text-base mb-2 reveal reveal-delay-3">
+        Building of Digital Horizons
+      </p>
+
+      <!-- Divider diamonds -->
+      <div class="flex justify-center items-center gap-3 my-6 reveal reveal-delay-3">
+        <div class="w-2 h-2 rounded-sm rotate-45" style="background:#4FC3F7;box-shadow:0 0 10px #4FC3F7;"></div>
+        <div class="h-px w-32 md:w-48"
+          style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.6),transparent)"></div>
+        <div class="w-2 h-2 rounded-sm rotate-45" style="background:#1565C0;box-shadow:0 0 10px #1565C0;"></div>
+        <div class="h-px w-32 md:w-48"
+          style="background:linear-gradient(90deg,transparent,rgba(21,101,192,0.6),transparent)"></div>
+        <div class="w-2 h-2 rounded-sm rotate-45" style="background:#4FC3F7;box-shadow:0 0 10px #4FC3F7;"></div>
+      </div>
+
+      <!-- Institution -->
+      <div class="reveal reveal-delay-4">
+        <p class="font-inter font-medium text-text-primary text-base md:text-lg mb-1">Computer Department</p>
+        <p class="font-inter text-text-muted text-sm md:text-base">Thakur College of Engineering &amp; Technology</p>
+        <p class="font-inter text-text-muted text-sm">TCET Mumbai</p>
+      </div>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mt-10 reveal reveal-delay-5">
+        <a href="#students" id="hero-cta-explore"
+          class="px-7 py-3 rounded-full font-montserrat font-bold text-sm uppercase tracking-widest transition-all duration-300"
+          style="background:linear-gradient(135deg,#4FC3F7,#1565C0);color:#071633;box-shadow:0 0 30px rgba(79,195,247,0.35);letter-spacing:0.12em;"
+          onmouseover="this.style.boxShadow='0 0 50px rgba(79,195,247,0.6)';this.style.transform='translateY(-2px)'"
+          onmouseout="this.style.boxShadow='0 0 30px rgba(79,195,247,0.35)';this.style.transform='translateY(0)'">
+          Explore Achievements
+        </a>
+        <a href="#students" id="hero-cta-students"
+          class="px-7 py-3 rounded-full font-montserrat font-bold text-sm uppercase tracking-widest border transition-all duration-300"
+          style="border-color:rgba(79,195,247,0.4);color:#4FC3F7;letter-spacing:0.12em;"
+          onmouseover="this.style.background='rgba(79,195,247,0.08)';this.style.borderColor='rgba(79,195,247,0.8)';this.style.transform='translateY(-2px)'"
+          onmouseout="this.style.background='transparent';this.style.borderColor='rgba(79,195,247,0.4)';this.style.transform='translateY(0)'">
+          Student Wins
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+      <span class="vol-tag" style="font-size:0.55rem;letter-spacing:0.25em;color:rgba(148,163,184,0.5);">SCROLL</span>
+      <div class="w-px h-10 relative overflow-hidden" style="background:rgba(79,195,247,0.15);">
+        <div
+          style="position:absolute;top:-100%;width:100%;height:100%;background:linear-gradient(transparent,#4FC3F7);animation:scanLine 1.8s ease-in-out infinite;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════╗ -->
+  <!-- ║   STUDENT ACHIEVEMENTS   ║ -->
+  <!-- ╚══════════════════════════╝ -->
+  <section id="students" class="relative py-24 px-4"
+    style="background:linear-gradient(180deg,transparent,rgba(21,101,192,0.04),transparent);">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-16 reveal">
+        <div class="badge-chip mx-auto mb-4"
+          style="background:rgba(21,101,192,0.12);border-color:rgba(30,136,229,0.35);color:#1E88E5;">
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          Student Wins
+        </div>
+        <div class="section-heading-line">
+          <h2 class="font-orbitron font-black text-2xl md:text-4xl text-text-primary whitespace-nowrap px-4"
+            style="text-shadow:0 0 30px rgba(30,136,229,0.2);">
+            STUDENT <span class="neon-text-blue">ACHIEVEMENTS</span>
+          </h2>
+        </div>
+        <p class="text-text-muted text-sm mt-4 font-inter max-w-xl mx-auto">
+          Celebrating TCET students representing their teams at intercollegiate hackathons and AI competitions.
+        </p>
+      </div>
+
+      <div class="student-achievement-list">
+        <article class="student-achievement-story reveal">
+          <figure class="student-achievement-visual">
+            <a class="article-image-link" href="STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/BYTE BRAINACTICS- WINNERS/2026/WhatsApp Image 2026-09-25 at 17.44.14.jpeg" target="_blank" rel="noopener noreferrer" aria-label="Open the original Byte Brainiacs 2026 award photo">
+              <img class="student-achievement-image" src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/BYTE BRAINACTICS- WINNERS/2026/WhatsApp Image 2026-09-25 at 17.44.14.jpeg" alt="Atharva Dubey and teammates with their Byte Brainiacs 2026 second-place award" loading="lazy" decoding="async" onerror="this.closest('figure').hidden=true" />
+            </a>
+          </figure>
+          <div class="student-achievement-copy">
+            <div class="student-achievement-kicker">Hackathon · 2026</div>
+            <h3 class="student-achievement-title">Team Xythera takes second place</h3>
+            <p>Atharva Umeshkumar Dubey and Team Xythera earned second place at Byte Brainiacs: The ML Showdown, hosted by the Department of Information Technology.</p>
+            <p class="student-achievement-result">2nd Place · Byte Brainiacs 2026</p>
+          </div>
+        </article>
+
+        <article class="student-achievement-story reveal">
+          <figure class="student-achievement-visual">
+            <a class="article-image-link" href="STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/BYTE BRAINACTICS- WINNERS/2025/WhatsApp Image 2026-09-25 at 17.46.03 (1).jpeg" target="_blank" rel="noopener noreferrer" aria-label="Open the original Byte Brainiacs 2025 award photo">
+              <img class="student-achievement-image" src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/BYTE BRAINACTICS- WINNERS/2025/WhatsApp Image 2026-09-25 at 17.46.03 (1).jpeg" alt="Byte Brainiacs 2025 award presentation with the winning team" loading="lazy" decoding="async" onerror="this.closest('figure').hidden=true" />
+            </a>
+          </figure>
+          <div class="student-achievement-copy">
+            <div class="student-achievement-kicker">Hackathon · 2025</div>
+            <h3 class="student-achievement-title">A second Byte Brainiacs podium finish</h3>
+            <p>The team secured second place in the 2025 edition of Byte Brainiacs: The ML Showdown, representing TCET with the team name TEAM_BB_Thakur_Algorithm Alliance.</p>
+            <p class="student-achievement-result">2nd Place · Byte Brainiacs 2025</p>
+          </div>
+        </article>
+
+        <article class="student-achievement-story reveal">
+          <figure class="student-achievement-visual">
+            <a class="article-image-link" href="STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/MUMBAI HACKS - FINALIST/WhatsApp Image 2026-09-25 at 17.56.34.jpeg" target="_blank" rel="noopener noreferrer" aria-label="Open the original MumbaiHacks 2025 team photo">
+              <img class="student-achievement-image" src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/MUMBAI HACKS - FINALIST/WhatsApp Image 2026-09-25 at 17.56.34.jpeg" alt="Atharva Dubey and teammates at MumbaiHacks 2025" loading="lazy" decoding="async" onerror="this.closest('figure').hidden=true" />
+            </a>
+          </figure>
+          <div class="student-achievement-copy">
+            <div class="student-achievement-kicker">Agentic AI Hackathon · 2025</div>
+            <h3 class="student-achievement-title">MumbaiHacks finalist</h3>
+            <p>Atharva Dubey advanced to the final rounds of MumbaiHacks 2025, an Agentic AI hackathon organized by the Tech Entrepreneurs Association of Mumbai.</p>
+            <p class="student-achievement-result">Finalist · MumbaiHacks 2025</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔═══════════════════════════════════════════════════════════╗ -->
+  <!-- ║   FACULTY ACHIEVEMENTS & DEPARTMENT DIRECTORY             ║ -->
+  <!-- ╚═══════════════════════════════════════════════════════════╝ -->
+  <section id="faculty" class="relative py-24 px-4">
+    <div class="absolute top-0 left-0 right-0 h-px"
+      style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.3),transparent);"></div>
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Section Header -->
+      <div class="text-center mb-12 reveal">
+        <div class="badge-chip mx-auto mb-4"
+          style="background:rgba(124,58,237,0.12);border-color:rgba(124,58,237,0.35);color:#A78BFA;">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
+          </svg>
+          Faculty Excellence &amp; Mentorship
+        </div>
+        <div class="section-heading-line">
+          <h2 class="font-orbitron font-black text-2xl md:text-4xl text-text-primary whitespace-nowrap px-4">
+            FACULTY <span class="gradient-text">ACHIEVEMENTS</span> &amp; DIRECTORY
+          </h2>
+        </div>
+        <p class="text-text-muted text-sm mt-4 font-inter max-w-3xl mx-auto leading-relaxed">
+          Celebrating the distinguished faculty members of the Computer Applications Department (BCA &amp; MCA) at TCET
+          Mumbai — driving groundbreaking research, intellectual property patents, national certifications, and
+          visionary academic leadership.
+        </p>
+      </div>
+
+      <!-- Quick Metrics Counter Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 reveal">
+        <div class="faculty-stat-card">
+          <div class="font-orbitron font-black text-2xl md:text-3xl text-cyan-glow mb-1">18+</div>
+          <div class="font-montserrat font-semibold text-text-primary text-xs tracking-wider uppercase">Esteemed Faculty
+          </div>
+          <div class="text-text-muted text-xs mt-1">MCA &amp; BCA Department</div>
+        </div>
+        <div class="faculty-stat-card">
+          <div class="font-orbitron font-black text-2xl md:text-3xl text-neon-purple mb-1">6</div>
+          <div class="font-montserrat font-semibold text-text-primary text-xs tracking-wider uppercase">Best Paper
+            Awards</div>
+          <div class="text-text-muted text-xs mt-1">MULTICON-W 2026 (IC-ICN)</div>
+        </div>
+        <div class="faculty-stat-card">
+          <div class="font-orbitron font-black text-2xl md:text-3xl text-cyan-glow mb-1">1</div>
+          <div class="font-montserrat font-semibold text-text-primary text-xs tracking-wider uppercase">Patent Published
+          </div>
+          <div class="text-text-muted text-xs mt-1">Post-Quantum Cryptography</div>
+        </div>
+        <div class="faculty-stat-card">
+          <div class="font-orbitron font-black text-2xl md:text-3xl text-neon-purple mb-1">30+</div>
+          <div class="font-montserrat font-semibold text-text-primary text-xs tracking-wider uppercase">FDPs &amp;
+            Certifications</div>
+          <div class="text-text-muted text-xs mt-1">NVIDIA · AICTE · UGC · IIT</div>
+        </div>
+      </div>
+
+      <!-- Conference & Research Highlights Banners (Grid) -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12 reveal">
+        <!-- Banner 1: MULTICON-W 2026 -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between"
+          style="border-color:rgba(79,195,247,0.3);background:linear-gradient(135deg,rgba(12,32,74,0.85),rgba(10,24,56,0.9));">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,#4FC3F7,transparent);"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="badge-chip"
+                style="background:rgba(79,195,247,0.12);color:#4FC3F7;border-color:rgba(79,195,247,0.35);">
+                MULTICON-W 2026
+              </span>
+              <span class="text-xs text-cyan-glow font-orbitron font-bold">IC-ICN 2026</span>
+            </div>
+            <h3 class="font-montserrat font-bold text-text-primary text-base mb-2">
+              International Best Paper Awards
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4">
+              Conferred by Thakur College of Engineering &amp; Technology to MCA faculty for high-impact research in
+              Digital Well-being and Research-Based Learning frameworks.
+            </p>
+          </div>
+          <a href="FACULTY -20261021T045428Z-1-001/FACULTY/Multicon Certificate/Cetificate BEST PAPPER FACULTY.pdf"
+            target="_blank" rel="noopener noreferrer" class="article-file-link w-full justify-center"
+            style="margin-right:0;margin-bottom:0;text-align:center;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            View Best Paper Certificates (PDF)
+          </a>
+        </div>
+
+        <!-- Banner 2: Published Patent & NVIDIA CUDA -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between"
+          style="border-color:rgba(124,58,237,0.3);background:linear-gradient(135deg,rgba(18,24,68,0.85),rgba(14,20,52,0.9));">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,#7C3AED,transparent);"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="badge-chip"
+                style="background:rgba(124,58,237,0.15);color:#A78BFA;border-color:rgba(124,58,237,0.4);">
+                Intellectual Property
+              </span>
+              <span class="text-xs text-neon-purple font-orbitron font-bold">Govt. of India</span>
+            </div>
+            <h3 class="font-montserrat font-bold text-text-primary text-base mb-2">
+              Quantum Cryptography Patent &amp; NVIDIA AI
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4">
+              Published in the Official Patent Office Journal: Quantum-Resilient Cryptographic Accelerator (Dr. Deepika
+              Saravagi), alongside NVIDIA CUDA Python Accelerated Computing certification.
+            </p>
+          </div>
+          <a href="FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi/patent.pdf" target="_blank"
+            rel="noopener noreferrer" class="article-file-link w-full justify-center"
+            style="margin-right:0;margin-bottom:0;text-align:center;background:rgba(124,58,237,0.15);border-color:rgba(124,58,237,0.4);color:#C4B5FD;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            View Official Patent Gazette (PDF)
+          </a>
+        </div>
+
+        <!-- Banner 3: ISTE Approved STTP "Research 360°" -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between"
+          style="border-color:rgba(79,195,247,0.3);background:linear-gradient(135deg,rgba(12,32,74,0.85),rgba(10,24,56,0.9));">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,#4FC3F7,transparent);"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="badge-chip"
+                style="background:rgba(79,195,247,0.12);color:#4FC3F7;border-color:rgba(79,195,247,0.35);">
+                National STTP
+              </span>
+              <span class="text-xs text-cyan-glow font-orbitron font-bold">ISTE Approved</span>
+            </div>
+            <h3 class="font-montserrat font-bold text-text-primary text-base mb-2">
+              Research 360°: AI-Driven Excellence
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4">
+              One-Week Short Term Training Program on AI-Driven Research Excellence and Thesis Crafting organised by
+              Department of Computer Application (BCA), TCET Mumbai with 31 participating faculty researchers.
+            </p>
+          </div>
+          <a href="FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf" target="_blank" rel="noopener noreferrer"
+            class="article-file-link w-full justify-center" style="margin-right:0;margin-bottom:0;text-align:center;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            View ISTE STTP Certificates (PDF)
+          </a>
+        </div>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-10 reveal">
+        <button class="faculty-filter-btn active" onclick="filterFaculty('all', this)">All Faculty (18)</button>
+        <button class="faculty-filter-btn" onclick="filterFaculty('award', this)">Best Paper Awardees (6)</button>
+        <button class="faculty-filter-btn" onclick="filterFaculty('research', this)">Patents &amp; Certifications
+          (7)</button>
+        <button class="faculty-filter-btn" onclick="filterFaculty('faculty', this)">Department Roster (18)</button>
+      </div>
+
+      <!-- Faculty Cards Grid -->
+      <div id="faculty-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+        <!-- 1: Dr. Deepika Saravagi -->
+        <article id="faculty-card-deepika" data-category="award research faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-1 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <img src="FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi.png" alt="Dr. Deepika Saravagi"
+                class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>DS</div>'" />
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Dr. Deepika Saravagi
+                </h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(124,58,237,0.15);color:#A78BFA;border-color:rgba(124,58,237,0.4);">2
+                    Best Papers</span>
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Patent
+                    Holder</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🏆
+                  MULTICON-W 2026 Best Paper</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">"Impact of Short-Form Video Consumption on
+                  Attention &amp; Digital Well-being Among College Students"</p>
+              </div>
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🏆
+                  MULTICON-W 2026 Best Paper</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">"A Case Study on Research-Based Learning
+                  (RBL) Guidelines at TCET, Mumbai"</p>
+              </div>
+              <div class="achievement-badge"
+                style="background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.25);">
+                <p class="text-xs font-bold font-montserrat uppercase tracking-wider mb-0.5" style="color:#C4B5FD;">📜
+                  Indian Patent &amp; NVIDIA Certified</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Quantum-Resilient Cryptographic
+                  Accelerator · NVIDIA CUDA Python · IEEE &amp; EJSIT Reviewer</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('deepika')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 2: Mrs. Rinkle Solanki (HOD) -->
+        <article id="faculty-card-rinkle" data-category="award research faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-2 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <img src="FACULTY -20261021T045428Z-1-001/FACULTY/rinkle.png" alt="Mrs. Rinkle Solanki"
+                class="faculty-profile-img"
+                onerror="this.outerHTML='<div class=faculty-initials-avatar style=border-color:#4FC3F7;color:#4FC3F7;>RS</div>'" />
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mrs. Rinkle Solanki</h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Head of Department (HOD) · BCA &amp; MCA</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Head
+                    of Department</span>
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(124,58,237,0.15);color:#A78BFA;border-color:rgba(124,58,237,0.4);">Best
+                    Paper Award</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🏆
+                  MULTICON-W 2026 Best Paper</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">"Impact of Short-Form Video Consumption on
+                  Attention &amp; Digital Well-being Among College Students"</p>
+              </div>
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📄
+                  International Conference Full Paper</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">"AI-Driven Intelligent Load Balancing in
+                  Cloud Computing Environments"</p>
+              </div>
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🎖️
+                  Departmental Leadership</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Program Chair &amp; Convener for ISTE
+                  Approved STTP "Research 360°: AI-Driven Research Excellence"</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('rinkle')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 3: Mr. Jaynish Kumar Mandal (Dy. HOD) -->
+        <article id="faculty-card-jaynish" data-category="award research faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-3 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <img src="FACULTY -20261021T045428Z-1-001/FACULTY/jaynish.png" alt="Mr. Jaynish Kumar Mandal"
+                class="faculty-profile-img"
+                onerror="this.outerHTML='<div class=faculty-initials-avatar style=border-color:#4FC3F7;color:#4FC3F7;>JM</div>'" />
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mr. Jaynish Kumar Mandal
+                </h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Deputy HOD · BCA &amp; Computer Departments</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Deputy
+                    HOD</span>
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(124,58,237,0.15);color:#A78BFA;border-color:rgba(124,58,237,0.4);">Best
+                    Paper Award</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🏆
+                  MULTICON-W 2026 Best Paper</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">"Impact of Short-Form Video Consumption on
+                  Attention &amp; Digital Well-being Among College Students"</p>
+              </div>
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🎖️ STTP
+                  Leadership</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Convener for National Level One-Week ISTE
+                  STTP on "Research 360°: AI-Driven Research Excellence"</p>
+              </div>
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📚 Academic
+                  Leadership</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Directing student research initiatives and
+                  innovation competitions across BCA &amp; MCA cohorts.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('jaynish')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 4: Ms. Shallu Khanna -->
+        <article id="faculty-card-shallu" data-category="research faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-1 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">SK</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Shallu Khanna</h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Industry
+                    5.0 &amp; GenAI</span>
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(124,58,237,0.15);color:#A78BFA;border-color:rgba(124,58,237,0.4);">NITTTR
+                    Certified</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🤖 AICTE
+                  NITTTR FDP</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">"Advancing to Industry 5.0 with AI" —
+                  AICTE recognized FDP conducted by NITTTR Chandigarh.</p>
+              </div>
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">⚡ AICTE
+                  NITTTR FDP</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">"Generative AI" — Advanced programme on
+                  generative deep learning architectures &amp; applications.</p>
+              </div>
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🇮🇳
+                  National Energy Lecture &amp; STTP</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Dr. M. R. Srinivasan Memorial Lecture on
+                  Nuclear Energy Programme &amp; ISTE STTP Participant.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('shallu')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+
+
+
+        <!-- 8: Mr. Sandeep Vishvakarma -->
+        <article id="faculty-card-sandeep" data-category="award faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-2 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">SV</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mr. Sandeep Vishvakarma
+                </h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(124,58,237,0.15);color:#A78BFA;border-color:rgba(124,58,237,0.4);">Best
+                    Paper Award</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">STTP Member</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🏆
+                  MULTICON-W 2026 Best Paper</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">"Impact of Short-Form Video Consumption on
+                  Attention &amp; Digital Well-being Among College Students"</p>
+              </div>
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📑 STTP
+                  Research 360°</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Participant in ISTE Approved One-Week STTP
+                  on AI-Driven Research &amp; Thesis Crafting.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('sandeep')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 9: Ms. Tamanna Agrawal -->
+        <article id="faculty-card-tamanna" data-category="award faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-3 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">TA</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Tamanna Agrawal</h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(124,58,237,0.15);color:#A78BFA;border-color:rgba(124,58,237,0.4);">Best
+                    Paper Award</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">STTP Member</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🏆
+                  MULTICON-W 2026 Best Paper</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">"A Case Study on Research-Based Learning
+                  (RBL) Guidelines at TCET, Mumbai"</p>
+              </div>
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📑 STTP
+                  Research 360°</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Participant in ISTE Approved One-Week STTP
+                  on AI-Driven Research &amp; Thesis Crafting.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('tamanna')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+
+        <!-- 11: Mr. Dinesh Shirvaikar -->
+        <article id="faculty-card-dinesh" data-category="faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-2 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">DS</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mr. Dinesh Shirvaikar
+                </h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Core
+                    Systems</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Academic Mentor</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">💻 Core
+                  Computing &amp; Mentorship</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Providing foundational leadership in
+                  systems programming, data infrastructure, and project architecture for MCA students.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('dinesh')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 12: Mr. Rabi Narayan Padhy -->
+        <article id="faculty-card-rabi" data-category="research faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-3 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">RP</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mr. Rabi Narayan Padhy
+                </h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">STTP
+                    Member</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Advanced Applications</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📑 STTP
+                  Research 360°</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Participant in ISTE Approved One-Week STTP
+                  on AI-Driven Research Excellence and Thesis Crafting.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('rabi')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 13: Ms. Harshita Singh -->
+        <article id="faculty-card-harshita" data-category="research faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-1 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">HS</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Harshita Singh</h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">STTP
+                    Member</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Information Systems</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📑 STTP
+                  Research 360°</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Participant in ISTE Approved One-Week STTP
+                  on AI-Driven Research Excellence and Thesis Crafting.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('harshita')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 14: Ms. Shreyasi Karapu -->
+        <article id="faculty-card-shreyasi" data-category="research faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-2 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">SK</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Shreyasi Karapu</h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">STTP
+                    Member</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Software Engineering</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📑 STTP
+                  Research 360°</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Participant in ISTE Approved One-Week STTP
+                  on AI-Driven Research Excellence and Thesis Crafting.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('shreyasi')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 15: Ms. Shruti Shukla -->
+        <article id="faculty-card-shruti" data-category="research faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-3 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">SS</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Shruti Shukla</h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">STTP
+                    Member</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Web Architectures</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📑 STTP
+                  Research 360°</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Participant in ISTE Approved One-Week STTP
+                  on AI-Driven Research Excellence and Thesis Crafting.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('shruti')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 16: Ms. Sakshi Singh -->
+        <article id="faculty-card-sakshi" data-category="faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-1 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">SS</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Sakshi Singh</h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">App
+                    Development</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Innovation Mentor</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">💡
+                  Mentorship &amp; Innovation</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Guiding applied application development
+                  and student research teams across modern digital technologies.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('sakshi')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 17: Ms. Aditi Shinde -->
+        <article id="faculty-card-aditi" data-category="faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-2 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">AS</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Aditi Shinde</h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Computational
+                    Intelligence</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Academic Guide</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🧠
+                  Intelligent Systems &amp; Guidance</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Specializing in algorithm analysis,
+                  computational intelligence, and student capstone research mentorship.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('aditi')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+        <!-- 18: Ms. Riya Shetty -->
+        <article id="faculty-card-riya" data-category="faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-3 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="faculty-initials-avatar" aria-hidden="true">RS</div>
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Riya Shetty</h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip"
+                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Information
+                    Systems</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Academic Guide</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📊
+                  Information Systems &amp; Excellence</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Fostering academic excellence, modern
+                  curriculum delivery, and technical communication in the department.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('riya')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════╗ -->
+  <!-- ║       ARTICLES           ║ -->
+  <!-- ╚══════════════════════════╝ -->
+  <section id="articles" class="relative py-24 px-4"
+    style="background:linear-gradient(180deg,transparent,rgba(124,58,237,0.04),transparent);">
+    <div class="absolute top-0 left-0 right-0 h-px"
+      style="background:linear-gradient(90deg,transparent,rgba(124,58,237,0.3),rgba(79,195,247,0.3),transparent);">
+    </div>
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-16 reveal">
+        <div class="badge-chip mx-auto mb-4"
+          style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.35);color:#7C3AED;">
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+          </svg>
+          BODH 2026 Reads
+        </div>
+        <div class="section-heading-line">
+          <h2 class="font-orbitron font-black text-2xl md:text-4xl text-text-primary whitespace-nowrap px-4"
+            style="text-shadow:0 0 30px rgba(124,58,237,0.25);">
+            FEATURED <span
+              style="background:linear-gradient(135deg,#7C3AED,#4FC3F7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">ARTICLES</span>
+          </h2>
+        </div>
+        <p class="text-text-muted text-sm mt-4 font-inter max-w-xl mx-auto">
+          Research papers, achievements, and insights from the BCA/Computer Department at TCET Mumbai — curated for BODH
+          2026.
+        </p>
+      </div>
+
+      <!-- Articles grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+        <!-- Article 1: IAF Offer Letter - Meet Bagwe -->
+        <article id="article-card-1" class="article-card rounded-2xl overflow-hidden reveal reveal-delay-1">
+          <div class="article-img-wrap">
+            <img src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Meet Bagwe SYBCA A 05/Screenshot_20261006-184143 (1).png"
+              alt="IAF Offer Letter — Meet Gopal Bagwe" loading="lazy"
+              onerror="this.parentElement.outerHTML='<div class=article-img-placeholder><span class=font-montserrat>Achievement</span></div>'" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <div class="badge-chip mb-3"
+              style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.3);color:#7C3AED;">Offer Letter ·
+              BCA</div>
+            <h3 class="font-montserrat font-bold text-text-primary text-sm leading-snug mb-2">
+              IAF Offer Letter — Meet Gopal Bagwe
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4 flex-1">
+              Meet Gopal Bagwe (SYBCA A, Roll No. 05) received a prestigious <strong class="text-text-primary">Offer
+                Letter</strong> for an industry internship position, marking a proud milestone for the BCA Department at
+              TCET Mumbai.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3"
+              style="border-top:1px solid rgba(66,165,245,0.1);">
+              <span class="text-text-muted"
+                style="font-size:0.68rem;font-family:'Montserrat',sans-serif;font-weight:600;">Meet Bagwe · SYBCA
+                A</span>
+              <button class="article-read-btn" onclick="openArticle('article1')">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                Read
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 2: Atharva & Rushikesh Poster Presentation -->
+        <article id="article-card-2" class="article-card rounded-2xl overflow-hidden reveal reveal-delay-2">
+          <div class="article-img-wrap">
+            <img
+              src="STUDENTS-20261021T045433Z-1-001/STUDENTS/ATHARVA N RUSHIKESH (S.Y BCA 36 N 39)/IMG-20261006-WA0016.jpg"
+              alt="Poster Presentation — Atharva & Rushikesh" loading="lazy" style="object-position: center 20%;"
+              onerror="this.parentElement.outerHTML='<div class=article-img-placeholder><span class=font-montserrat>2nd Place</span></div>'" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <div class="badge-chip mb-3">Research · Poster</div>
+            <h3 class="font-montserrat font-bold text-text-primary text-sm leading-snug mb-2">
+              Poster Presentation — 2nd Place at MULTICON-W 2026
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4 flex-1">
+              Atharva (SY BCA, Roll 36) and Rushikesh (SY BCA, Roll 39) secured <strong class="text-text-primary">2nd
+                place</strong> in the poster presentation category at MULTICON-W 2026 (IC-ICN 2026).
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3"
+              style="border-top:1px solid rgba(66,165,245,0.1);">
+              <span class="text-text-muted"
+                style="font-size:0.68rem;font-family:'Montserrat',sans-serif;font-weight:600;">Atharva &amp; Rushikesh ·
+                SYBCA</span>
+              <button class="article-read-btn" onclick="openArticle('article2')">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                Read
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3: Tilak Gupta – AI Fundamentals Research Paper -->
+        <article id="article-card-3" class="article-card rounded-2xl overflow-hidden reveal reveal-delay-3">
+          <div class="article-img-wrap">
+            <img
+              src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Tilak Yogesh Gupta (SY-MCA-A 27)/AI_Fundamentals_ResearchPaper_Certificate.png"
+              alt="AI Fundamentals Certificate – Tilak Gupta" loading="lazy"
+              onerror="this.parentElement.outerHTML='<div class=article-img-placeholder><span class=font-montserrat>AI Research</span></div>'" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <div class="badge-chip mb-3"
+              style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.3);color:#7C3AED;">AI · Certificate
+            </div>
+            <h3 class="font-montserrat font-bold text-text-primary text-sm leading-snug mb-2">
+              AI Fundamentals Research Paper — Tilak Yogesh Gupta
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4 flex-1">
+              Tilak Yogesh Gupta (SY MCA A, Roll 27) earned a certification in <strong class="text-text-primary">AI
+                Fundamentals</strong> from a recognised research paper, showcasing cutting-edge expertise in artificial
+              intelligence.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3"
+              style="border-top:1px solid rgba(66,165,245,0.1);">
+              <span class="text-text-muted"
+                style="font-size:0.68rem;font-family:'Montserrat',sans-serif;font-weight:600;">Tilak Gupta · SY MCA
+                A</span>
+              <button class="article-read-btn" onclick="openArticle('article3')">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                Read
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 4: Yash Tulaskar – Aavishkar -->
+        <article id="article-card-4" class="article-card rounded-2xl overflow-hidden reveal reveal-delay-1">
+          <div class="article-img-wrap">
+            <img src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Yash Tulaskar (MCA-B 39)/Aavishkar.jpg"
+              alt="Aavishkar – Yash Tulaskar" loading="lazy"
+              onerror="this.parentElement.outerHTML='<div class=article-img-placeholder><span class=font-montserrat>Aavishkar</span></div>'" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <div class="badge-chip mb-3">Competition · Aavishkar</div>
+            <h3 class="font-montserrat font-bold text-text-primary text-sm leading-snug mb-2">
+              Aavishkar Research Convention — Yash Tulaskar
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4 flex-1">
+              Yash Tulaskar (MCA B, Roll 39) participated in the prestigious <strong class="text-text-primary">Aavishkar
+                Research Convention</strong>, representing the Computer Department with a compelling research
+              presentation.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3"
+              style="border-top:1px solid rgba(66,165,245,0.1);">
+              <span class="text-text-muted"
+                style="font-size:0.68rem;font-family:'Montserrat',sans-serif;font-weight:600;">Yash Tulaskar · MCA
+                B</span>
+              <button class="article-read-btn" onclick="openArticle('article4')">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                Read
+              </button>
+            </div>
+          </div>
+        </article>
+
+
+
+        <!-- Article 6: Sachin Gupta – Research Head -->
+        <article id="article-card-6" class="article-card rounded-2xl overflow-hidden reveal reveal-delay-3">
+          <div class="article-img-wrap">
+            <img src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Sachin Gupta (TY-BCA-A-25)/Research Head (Sachin).jpg"
+              alt="Sachin Gupta Research Head" loading="lazy"
+              onerror="this.parentElement.outerHTML='<div class=article-img-placeholder><span class=font-montserrat>Research</span></div>'" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <div class="badge-chip mb-3">Research · TYBCA</div>
+            <h3 class="font-montserrat font-bold text-text-primary text-sm leading-snug mb-2">
+              Research Head Recognition — Sachin Gupta
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4 flex-1">
+              Sachin Gupta (TY-BCA-A, Roll 25) has been recognised as <strong class="text-text-primary">Research
+                Head</strong> for the BCA section, leading research initiatives and coordinating academic projects.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3"
+              style="border-top:1px solid rgba(66,165,245,0.1);">
+              <span class="text-text-muted"
+                style="font-size:0.68rem;font-family:'Montserrat',sans-serif;font-weight:600;">Sachin Gupta · TYBCA
+                A</span>
+              <button class="article-read-btn" onclick="openArticle('article6')">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                Read
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 7: Atharva Umeshkumar Dubey – Hackathon Winner -->
+        <article id="article-card-7" class="article-card rounded-2xl overflow-hidden reveal reveal-delay-1">
+          <div class="article-img-wrap">
+            <img
+              src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/BYTE BRAINACTICS- WINNERS/2025/WhatsApp Image 2026-09-25 at 17.46.03.jpeg"
+              alt="Atharva Dubey Hackathon Winner" loading="lazy" style="object-position: center 25%;"
+              onerror="this.parentElement.outerHTML='<div class=article-img-placeholder><span class=font-montserrat>Winner</span></div>'" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <div class="badge-chip mb-3"
+              style="background:rgba(79,195,247,0.1);border-color:rgba(79,195,247,0.3);color:#4FC3F7;">Hackathon ·
+              Winner</div>
+            <h3 class="font-montserrat font-bold text-text-primary text-sm leading-snug mb-2">
+              Byte Brainactics Winner — Atharva Dubey
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4 flex-1">
+              Atharva Dubey (TYBCA A, Roll 19) won <strong class="text-text-primary">2nd Place &amp; Cash Prize</strong>
+              at the Byte Brainactics Hackathon and reached the finals of Mumbai Hacks.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3"
+              style="border-top:1px solid rgba(66,165,245,0.1);">
+              <span class="text-text-muted"
+                style="font-size:0.68rem;font-family:'Montserrat',sans-serif;font-weight:600;">Atharva Dubey · TYBCA
+                A</span>
+              <button class="article-read-btn" onclick="openArticle('article7')">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                Read
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 8: Amogh Warang – Cricket Champion -->
+        <article id="article-card-8" class="article-card rounded-2xl overflow-hidden reveal reveal-delay-2">
+          <div class="article-img-wrap">
+            <img
+              src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Amogh Warang (TYBCA B-47)/a103d7cb-99e6-4a36-8de3-8197ce5446f2.jpg"
+              alt="Amogh Warang Cricket Champion" loading="lazy" style="object-position: center top;"
+              onerror="this.parentElement.outerHTML='<div class=article-img-placeholder><span class=font-montserrat>Sports</span></div>'" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <div class="badge-chip mb-3"
+              style="background:rgba(30,136,229,0.1);border-color:rgba(79,195,247,0.3);color:#64B5F6;">Sports · Cricket
+            </div>
+            <h3 class="font-montserrat font-bold text-text-primary text-sm leading-snug mb-2">
+              Cricket Championship — Amogh Warang
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4 flex-1">
+              Amogh Warang (TYBCA B, Roll 47) led collegiate squads to victory in <strong
+                class="text-text-primary">University Inter-Collegiate Cricket Tournaments</strong>, showcasing premier
+              athletic excellence.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3"
+              style="border-top:1px solid rgba(66,165,245,0.1);">
+              <span class="text-text-muted"
+                style="font-size:0.68rem;font-family:'Montserrat',sans-serif;font-weight:600;">Amogh Warang · TYBCA
+                B</span>
+              <button class="article-read-btn" onclick="openArticle('article8')">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                Read
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 9: Harsh Rahul Vaidya – Tech Fest Dual Winner -->
+        <article id="article-card-9" class="article-card rounded-2xl overflow-hidden reveal reveal-delay-3">
+          <div class="article-img-wrap">
+            <img src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Harsh Rahul Vaidya/pic.jpeg"
+              alt="Harsh Vaidya Tech Fest Winner" loading="lazy" style="object-position: center top;"
+              onerror="this.parentElement.outerHTML='<div class=article-img-placeholder><span class=font-montserrat>Winner</span></div>'" />
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <div class="badge-chip mb-3"
+              style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.3);color:#7C3AED;">Tech Fest · 2nd
+              Prize</div>
+            <h3 class="font-montserrat font-bold text-text-primary text-sm leading-snug mb-2">
+              GNIMS Tech Fest Dual Win — Harsh Vaidya
+            </h3>
+            <p class="text-text-muted text-xs leading-relaxed mb-4 flex-1">
+              Harsh Rahul Vaidya represented TCET at the GNIMS Inter-College Tech Fest, clinching <strong
+                class="text-text-primary">2nd prize in two separate technical events</strong>.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3"
+              style="border-top:1px solid rgba(66,165,245,0.1);">
+              <span class="text-text-muted"
+                style="font-size:0.68rem;font-family:'Montserrat',sans-serif;font-weight:600;">Harsh Vaidya · MCA</span>
+              <button class="article-read-btn" onclick="openArticle('article9')">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                Read
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔═══════════════════════════════════╗ -->
+  <!-- ║       MAGAZINE COMMITTEE          ║ -->
+  <!-- ╚═══════════════════════════════════╝ -->
+  <section id="committee" class="relative py-20 px-4"
+    style="background:linear-gradient(180deg,transparent,rgba(79,195,247,0.03),transparent);">
+    <div class="absolute top-0 left-0 right-0 h-px"
+      style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.2),transparent);"></div>
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-10 reveal">
+        <div class="badge-chip mx-auto mb-4">BODH 2026 Team</div>
+        <div class="section-heading-line">
+          <h2 class="font-orbitron font-black text-2xl md:text-4xl text-text-primary whitespace-nowrap px-4">
+            MAGAZINE <span class="gradient-text">COMMITTEE</span>
+          </h2>
+        </div>
+        <p class="text-text-muted text-sm mt-4 font-inter max-w-2xl mx-auto">
+          The student editorial team behind BODH 2026.
+        </p>
+      </div>
+
+      <article class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden reveal">
+        <div class="absolute top-0 left-0 right-0 h-px"
+          style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.5),transparent);"></div>
+        <div class="flex flex-col md:flex-row items-start gap-6 md:gap-8">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
+            style="background:linear-gradient(135deg,rgba(79,195,247,0.14),rgba(21,101,192,0.2));border:1px solid rgba(79,195,247,0.32);">
+            <svg class="w-8 h-8" fill="none" stroke="#4FC3F7" viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M16 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2m16 0v-2a4 4 0 00-3-3.87M14 3.13a4 4 0 010 7.75M14 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="badge-chip mb-3">Editorial · Design · Publication</div>
+            <h3 class="font-montserrat font-bold text-text-primary text-xl md:text-2xl mb-3">BODH 2026 Magazine Committee</h3>
+            <p class="font-inter text-text-muted text-sm md:text-base leading-relaxed max-w-3xl">
+              The student editorial team curated and designed the bulletin, bringing its stories and event highlights together as the BODH 2026 digital magazine.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════╗ -->
+  <!-- ║  ARTICLE OVERLAY     ║ -->
+  <!-- ╚══════════════════════╝ -->
+  <div id="article-overlay" role="dialog" aria-modal="true" aria-label="Article viewer">
+    <div id="article-overlay-inner">
+      <div id="article-overlay-close">
+        <button onclick="closeArticle()" aria-label="Close article">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div id="article-overlay-body"></div>
+    </div>
+  </div>
+
+  <!-- ╔═══════════════════════════════════════╗ -->
+  <!-- ║         FACULTY CREDENTIALS OVERLAY     ║ -->
+  <!-- ╚═══════════════════════════════════════╝ -->
+  <div id="faculty-overlay" role="dialog" aria-modal="true" aria-label="Faculty Credential Viewer">
+    <div id="faculty-overlay-inner">
+      <div id="faculty-overlay-close">
+        <button onclick="closeFacultyModal()" aria-label="Close credentials view">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div id="faculty-overlay-body"></div>
+    </div>
+  </div>
+
+  <!-- ╔══════════╗ -->
+  <!-- ║  FOOTER  ║ -->
+  <!-- ╚══════════╝ -->
+  <footer id="footer" class="footer-gradient relative pt-16 pb-8 px-4 overflow-hidden">
+    <div class="absolute top-0 left-0 right-0 h-px"
+      style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.4),rgba(21,101,192,0.4),transparent);">
+    </div>
+    <div class="orb w-72 h-72 opacity-5"
+      style="background:#4FC3F7;bottom:-30%;left:50%;transform:translateX(-50%);animation-duration:10s;"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="relative w-10 h-10 flex items-center justify-center">
+              <svg viewBox="0 0 36 36" fill="none" class="absolute inset-0 w-full h-full">
+                <polygon points="18,2 33,10 33,26 18,34 3,26 3,10" stroke="#4FC3F7" stroke-width="1.5"
+                  fill="rgba(79,195,247,0.05)" />
+              </svg>
+              <span class="font-orbitron text-sm font-black text-cyan-glow z-10">B</span>
+            </div>
+            <div>
+              <p class="font-orbitron font-bold text-text-primary text-sm" style="letter-spacing:0.1em;">BODH 2026</p>
+              <p class="font-inter text-text-muted text-xs" style="letter-spacing:0.08em;">Vol 01 · Building of Digital
+                Horizons</p>
+            </div>
+          </div>
+          <p class="font-inter text-text-muted text-xs leading-relaxed max-w-xs">
+            The official digital magazine of the Computer Department, celebrating the innovations, achievements, and
+            milestones of TCET Mumbai.
+          </p>
+        </div>
+
+        <!-- Institution -->
+        <div>
+          <h4 class="font-montserrat font-bold text-text-primary text-sm uppercase tracking-wider mb-4"
+            style="letter-spacing:0.15em;">Institution</h4>
+          <p class="font-inter font-semibold text-text-primary text-sm mb-1">Thakur College of Engineering &amp;
+            Technology</p>
+          <p class="font-inter text-text-muted text-xs leading-relaxed">Kandivali (East), Mumbai —
+            400101<br />Maharashtra, India</p>
+          <div class="flex items-center gap-2 mt-4">
+            <div class="w-1.5 h-1.5 rounded-full bg-cyan-glow animate-pulse"></div>
+            <span class="text-text-muted text-xs">Computer Department</span>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="font-montserrat font-bold text-text-primary text-sm uppercase tracking-wider mb-4"
+            style="letter-spacing:0.15em;">Connect</h4>
+          <div class="space-y-3">
+            <a href="https://www.tcetmumbai.in" target="_blank" rel="noopener noreferrer" id="footer-website"
+              class="flex items-center gap-3 group">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                style="background:rgba(79,195,247,0.08);border:1px solid rgba(79,195,247,0.2);">
+                <svg class="w-4 h-4 text-cyan-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              </div>
+              <span
+                class="font-inter text-text-muted text-xs group-hover:text-cyan-glow transition-colors">www.tcetmumbai.in</span>
+            </a>
+            <a href="https://www.instagram.com/tcetmumbai" target="_blank" rel="noopener noreferrer"
+              id="footer-instagram" class="flex items-center gap-3 group">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                style="background:rgba(79,195,247,0.08);border:1px solid rgba(79,195,247,0.2);">
+                <svg class="w-4 h-4 text-cyan-glow" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </div>
+              <span
+                class="font-inter text-text-muted text-xs group-hover:text-cyan-glow transition-colors">@tcetmumbai</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-px w-full mb-6"
+        style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.15),transparent);"></div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="font-inter text-text-muted text-xs">© 2026 BCA/Computer Department TCET. All Rights Reserved.</p>
+        <div class="flex items-center gap-2">
+          <div class="w-1.5 h-1.5 rounded-full"
+            style="background:#4FC3F7;box-shadow:0 0 6px #4FC3F7;animation:pulse 2s infinite;"></div>
+          <span class="font-orbitron text-text-muted" style="font-size:0.55rem;letter-spacing:0.2em;">BODH 2026 · VOL
+            01</span>
+          <div class="w-1.5 h-1.5 rounded-full"
+            style="background:#1565C0;box-shadow:0 0 6px #1565C0;animation:pulse 2s infinite 1s;"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Mobile menu ──
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', isOpen);
+      iconMenu.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+      mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      iconMenu.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    // ── Navbar scroll tint ──
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').style.boxShadow = window.scrollY > 20 ? '0 4px 30px rgba(0,0,0,0.4)' : 'none';
+    }, { passive: true });
+
+    // ── Scroll reveal ──
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Particle canvas ──
+    (function () {
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+
+      function resize() { canvas.width = canvas.parentElement.offsetWidth; canvas.height = canvas.parentElement.offsetHeight; }
+
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.vx = (Math.random() - 0.5) * 0.3;
+          this.vy = (Math.random() - 0.5) * 0.3;
+          this.r = Math.random() * 1.4 + 0.4;
+          this.alpha = Math.random() * 0.5 + 0.1;
+          /* sky-blue palette particles */
+          const palette = ['#4FC3F7', '#1E88E5', '#64B5F6', '#1565C0'];
+          this.color = palette[Math.floor(Math.random() * palette.length)];
+        }
+        update() {
+          this.x += this.vx; this.y += this.vy;
+          if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+        }
+        draw() {
+          ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+          ctx.fillStyle = this.color; ctx.globalAlpha = this.alpha; ctx.fill(); ctx.globalAlpha = 1;
+        }
+      }
+
+      function initParticles() {
+        const count = Math.min(120, Math.floor((canvas.width * canvas.height) / 8000));
+        particles = Array.from({ length: count }, () => new Particle());
+      }
+
+      function drawConnections() {
+        const maxDist = 120;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < maxDist) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(79,195,247,${0.06 * (1 - dist / maxDist)})`;
+              ctx.lineWidth = 0.5; ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        drawConnections();
+        requestAnimationFrame(animate);
+      }
+
+      resize(); initParticles(); animate();
+      new ResizeObserver(() => { resize(); initParticles(); }).observe(canvas.parentElement);
+    })();
+
+    // ── Active nav highlight ──
+    const sections = document.querySelectorAll('section[id], footer[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+      document.querySelectorAll('a.nav-link').forEach(l => {
+        l.style.color = l.getAttribute('href') === '#' + current ? '#4FC3F7' : '';
+      });
+    }, { passive: true });
+
+    // ── Articles data ──
+    const articleData = {
+      article1: {
+        tag: 'Defence & Career · Offer Letter',
+        tagColor: '#7C3AED',
+        title: 'Offer Letter Recognition — Meet Gopal Bagwe',
+        author: 'Meet Gopal Bagwe · SYBCA A, Roll No. 05',
+        coverImg: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Meet Bagwe SYBCA A 05/Screenshot_20261006-184143 (1).png',
+        body: `
+          <p>We are proud to celebrate <strong>Meet Gopal Bagwe</strong>, student of SYBCA A (Roll No. 05) at the BCA Department, Thakur College of Engineering &amp; Technology, for receiving an official <strong>Offer Letter</strong> for a competitive development role.</p>
+          <div class="article-overlay-divider"></div>
+          <p>This achievement reflects Meet's consistent dedication, technical competence, and drive to excel in web engineering and professional software development early in his collegiate tenure.</p>
+          <p>The BCA Department faculty and TCET community congratulate Meet Gopal Bagwe for setting a strong example of proactive career development and student initiative.</p>
+          <div class="article-overlay-divider"></div>
+          <p><strong>Department:</strong> BCA, Thakur College of Engineering &amp; Technology, Mumbai<br/>
+          <strong>Year:</strong> Second Year BCA (SYBCA A)<br/>
+          <strong>Achievement:</strong> Professional Offer Letter Recognition</p>
+        `,
+        files: [
+          { label: 'Official Offer Letter (PDF)', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Meet Bagwe SYBCA A 05/IAF Offer Letter Meet Gopal Bagwe.pdf' },
+          { label: 'Offer Letter Letterhead (Screenshot)', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Meet Bagwe SYBCA A 05/Screenshot_20261006-184143 (1).png' }
+        ]
+      },
+      article2: {
+        tag: 'Research · Poster Presentation',
+        tagColor: '#4FC3F7',
+        title: 'Poster Presentation — 2nd Place at MULTICON-W 2026',
+        author: 'Atharva (SY BCA Roll 36) &amp; Rushikesh (SY BCA Roll 39)',
+        coverImg: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/ATHARVA N RUSHIKESH (S.Y BCA 36 N 39)/IMG-20261006-WA0016.jpg',
+        body: `
+          <p><strong>Atharva</strong> (SY BCA, Roll No. 36) and <strong>Rushikesh</strong> (SY BCA, Roll No. 39) secured an impressive <strong>2nd Place</strong> in the Poster Presentation category at MULTICON-W 2026 (IC-ICN 2026) — the International Conference on Intelligent Computing and Networking.</p>
+          <div class="article-overlay-divider"></div>
+          <p>MULTICON-W is a premier international forum hosted by Thakur College of Engineering &amp; Technology, bringing together researchers, academicians, and scholars to present advancements in computing and networking.</p>
+          <p>Securing 2nd place highlights the students' exceptional research methodology, presentation acumen, and evidence-based inquiry cultivated within the department.</p>
+          <div class="article-overlay-divider"></div>
+          <p><strong>Conference:</strong> MULTICON-W 2026 (IC-ICN 2026)<br/>
+          <strong>Category:</strong> Poster Presentation<br/>
+          <strong>Award:</strong> 2nd Place 🥈</p>
+        `,
+        files: [
+          { label: 'Poster Presentation Certificate (PDF)', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/ATHARVA N RUSHIKESH (S.Y BCA 36 N 39)/poster presentation second rank-1.pdf' },
+          { label: 'Award Ceremony Photograph', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/ATHARVA N RUSHIKESH (S.Y BCA 36 N 39)/IMG-20261006-WA0016.jpg' }
+        ]
+      },
+      article3: {
+        tag: 'AI · Research Certification',
+        tagColor: '#7C3AED',
+        title: 'AI Fundamentals Research Paper Certificate — Tilak Yogesh Gupta',
+        author: 'Tilak Yogesh Gupta · SY MCA A, Roll No. 27',
+        coverImg: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Tilak Yogesh Gupta (SY-MCA-A 27)/AI_Fundamentals_ResearchPaper_Certificate.png',
+        body: `
+          <p><strong>Tilak Yogesh Gupta</strong> (SY MCA A, Roll No. 27) earned a certification in <strong>AI Fundamentals</strong> through an evaluated research paper presentation.</p>
+          <div class="article-overlay-divider"></div>
+          <p>The AI Fundamentals certification validates foundational competencies across supervised and unsupervised machine learning, deep neural network architectures, and natural language processing pipelines.</p>
+          <p>This achievement highlights the Computer Department's ongoing support for student-driven research in artificial intelligence.</p>
+          <div class="article-overlay-divider"></div>
+          <p><strong>Department:</strong> MCA, Thakur College of Engineering &amp; Technology, Mumbai<br/>
+          <strong>Year:</strong> Second Year MCA (SY MCA A)<br/>
+          <strong>Achievement:</strong> AI Fundamentals Certification</p>
+        `,
+        files: [
+          { label: 'AI Fundamentals Certificate (Image)', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Tilak Yogesh Gupta (SY-MCA-A 27)/AI_Fundamentals_ResearchPaper_Certificate.png' }
+        ]
+      },
+      article4: {
+        tag: 'Competition · Aavishkar',
+        tagColor: '#1E88E5',
+        title: 'Aavishkar Research Convention — Yash Tulaskar',
+        author: 'Yash Tulaskar · MCA B, Roll No. 39',
+        coverImg: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Yash Tulaskar (MCA-B 39)/Aavishkar.jpg',
+        body: `
+          <p><strong>Yash Tulaskar</strong> (MCA B, Roll No. 39) presented his research project <em>"CipherDrop : Secure File Transfer System"</em> at the <strong>20th Aavishkar Inter-Collegiate Research Convention</strong>.</p>
+          <div class="article-overlay-divider"></div>
+          <p>Aavishkar is the University of Mumbai's flagship research festival providing students a forum to present research innovations to academic and industrial juries. Representing TCET Mumbai at Aavishkar is a prestigious distinction.</p>
+        `,
+        files: [
+          { label: 'Aavishkar Certificate of Participation', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Yash Tulaskar (MCA-B 39)/Aavishkar.jpg' }
+        ]
+      },
+      article5: {
+        tag: 'Faculty Excellence · Best Paper',
+        tagColor: '#7C3AED',
+        title: '2 Best Paper Awards at MULTICON-W 2026 — Dr. Deepika Saravagi',
+        author: 'Dr. Deepika Saravagi · Faculty, Computer Department',
+        coverImg: 'FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi.png',
+        body: `
+          <p><strong>Dr. Deepika Saravagi</strong>, Faculty of the Computer Department at TCET Mumbai, has been honoured with <strong>two Best Paper Awards</strong> at MULTICON-W 2026 (IC-ICN 2026), the International Conference on Intelligent Computing and Networking.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Paper 1</h4>
+          <p>"<strong>Impact of Short-Form Video Consumption on Attention &amp; Digital Well-being Among College Students</strong>" — Investigates the cognitive effects of algorithmic feeds on college youth, providing empirical data on attention spans and digital hygiene.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Paper 2</h4>
+          <p>"<strong>A Case Study on Research-Based Learning (RBL) Guidelines at TCET, Mumbai</strong>" — Synthesizes pedagogical outcomes from institutional research frameworks at TCET.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Patents &amp; Certifications</h4>
+          <p>• <strong>Published Indian Patent:</strong> Quantum-Resilient Hybrid Cryptographic Accelerator for Post-Quantum Secure Data Transactions (Dec 2025)<br/>
+          • <strong>NVIDIA Certification:</strong> Fundamentals of Accelerated Computing with CUDA Python</p>
+        `,
+        files: [
+          { label: 'Published Patent (Official Gazette)', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi/patent.pdf' },
+          { label: 'MULTICON-W 2026 Best Paper Certificates', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Multicon Certificate/Cetificate BEST PAPPER FACULTY.pdf' },
+          { label: 'NVIDIA CUDA Python Certification', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi/My Learning _ NVIDIA.pdf' },
+          { label: 'CVMI 2026 Presentation Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi/CVMI2026_Certificate_CVMI2026-713_Dr__Deepika_Saravagi.png' },
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      article6: {
+        tag: 'Research · TYBCA',
+        tagColor: '#1E88E5',
+        title: 'Research Head Recognition — Sachin Gupta',
+        author: 'Sachin Gupta · TY-BCA-A, Roll No. 25',
+        coverImg: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Sachin Gupta (TY-BCA-A-25)/Research Head (Sachin).jpg',
+        body: `
+          <p><strong>Sachin Gupta</strong> (TY-BCA-A, Roll No. 25) has been appointed as the <strong>Research Head</strong> for the BCA section at Thakur College of Engineering &amp; Technology, Mumbai.</p>
+          <div class="article-overlay-divider"></div>
+          <p>As Research Head, Sachin leads student academic research coordination, organizing peer workshops, guiding project presentations, and promoting scientific inquiry across BCA cohorts.</p>
+        `,
+        files: [
+          { label: 'Research Head Certificate (Image)', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Sachin Gupta (TY-BCA-A-25)/Research Head (Sachin).jpg' }
+        ]
+      },
+      article7: {
+        tag: 'Hackathon · Winner',
+        tagColor: '#4FC3F7',
+        title: 'Byte Brainactics Winner & Mumbai Hacks Finalist — Atharva Dubey',
+        author: 'Atharva Umeshkumar Dubey · TYBCA A, Roll No. 19',
+        coverImg: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/BYTE BRAINACTICS- WINNERS/2025/WhatsApp Image 2026-09-25 at 17.46.03.jpeg',
+        body: `
+          <p><strong>Atharva Umeshkumar Dubey</strong> (TYBCA A, Roll No. 19) is a standout hackathon competitor and full-stack software engineer in the BCA Department at TCET Mumbai.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Key Competitive Wins</h4>
+          <p>• <strong>Byte Brainactics Hackathon:</strong> 2nd Prize Winner with cash award and trophy<br/>
+          • <strong>Mumbai Hacks:</strong> Selected as Finalist competing against top engineering institutes<br/>
+          • <strong>Google Cloud &amp; AI Certifications:</strong> Google Cloud generative AI, Think AI, and Saksham certifications</p>
+        `,
+        files: [
+          { label: 'Hackathon 2nd Prize Trophy & Award', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/BYTE BRAINACTICS- WINNERS/2025/HACKATHON 2nd PRICE.jpeg' },
+          { label: 'Team Award Ceremony Photo', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/BYTE BRAINACTICS- WINNERS/2025/WhatsApp Image 2026-09-25 at 17.46.03 (1).jpeg' },
+          { label: 'Mumbai Hacks Finalist Certificate', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Atharva Umeshkumar Dubey TYBCA A 19/ATHARVA UMESHKUMAR DUBEY TYBCA A 19/CERTIFICATES/MUMBAI HACKS - FINALIST/WhatsApp Image 2026-09-25 at 17.56.33.jpeg' }
+        ]
+      },
+      article8: {
+        tag: 'Sports · Cricket Championship',
+        tagColor: '#1E88E5',
+        title: 'Inter-Collegiate Cricket Championship — Amogh Warang',
+        author: 'Amogh Warang · TYBCA B, Roll No. 47',
+        coverImg: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Amogh Warang (TYBCA B-47)/a103d7cb-99e6-4a36-8de3-8197ce5446f2.jpg',
+        body: `
+          <p><strong>Amogh Warang</strong> (TYBCA B, Roll No. 47) represents TCET Mumbai with excellence in competitive inter-collegiate cricket tournaments.</p>
+          <div class="article-overlay-divider"></div>
+          <p>Demonstrating stellar athletic leadership and tactical play, Amogh has anchored collegiate squads to trophy victories, proving that BCA students at TCET excel across both technical computing disciplines and high-level sports.</p>
+        `,
+        files: [
+          { label: 'Championship Trophy & Medal', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Amogh Warang (TYBCA B-47)/IMG_20261006_232345.jpg' },
+          { label: 'Match Day Action Photo', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Amogh Warang (TYBCA B-47)/IMG20261006232253.jpg' }
+        ]
+      },
+      article9: {
+        tag: 'Tech Fest · Dual 2nd Prize',
+        tagColor: '#7C3AED',
+        title: 'GNIMS Tech Fest Dual 2nd Prize — Harsh Rahul Vaidya',
+        author: 'Harsh Rahul Vaidya · Computer Department',
+        coverImg: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Harsh Rahul Vaidya/pic.jpeg',
+        body: `
+          <p><strong>Harsh Rahul Vaidya</strong> represented TCET Mumbai at the inter-college tech fest hosted by GNIMS, Matunga.</p>
+          <div class="article-overlay-divider"></div>
+          <p>Competing in two separate technical event tracks against teams from across Mumbai, Harsh delivered outstanding presentations, winning <strong>Second Prize in both events</strong>.</p>
+        `,
+        files: [
+          { label: 'GNIMS Tech Fest Recognition', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Harsh Rahul Vaidya/Screenshot 2026-10-06 165905.png' }
+        ]
+      }
+    };
+
+    function openArticle(id) {
+      const art = articleData[id];
+      if (!art) return;
+      const overlay = document.getElementById('article-overlay');
+      const body = document.getElementById('article-overlay-body');
+      const coverHtml = art.coverImg
+        ? `<a class="article-image-link" href="${art.coverImg}" target="_blank" rel="noopener noreferrer" aria-label="Open original image for ${art.title}"><img src="${art.coverImg}" alt="${art.title}" class="article-overlay-cover" onerror="this.closest('a').style.display='none'" /></a><p class="article-image-hint">Select the image to open the original at full size.</p>`
+        : '';
+      const filesHtml = art.files && art.files.length
+        ? `<div class="article-overlay-divider"></div><div style="margin-top:4px;">${art.files.map(f => `<a href="${f.path}" target="_blank" rel="noopener noreferrer" class="article-file-link"><svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>${f.label}</a>`).join('')}</div>`
+        : '';
+      body.innerHTML = `
+        <span class="article-overlay-tag" style="border-color:rgba(${art.tagColor === '#7C3AED' ? '124,58,237' : art.tagColor === '#1E88E5' ? '30,136,229' : '79,195,247'},0.4);color:${art.tagColor};background:rgba(${art.tagColor === '#7C3AED' ? '124,58,237' : art.tagColor === '#1E88E5' ? '30,136,229' : '79,195,247'},0.1);">${art.tag}</span>
+        ${coverHtml}
+        <h2 class="article-overlay-title">${art.title}</h2>
+        <p class="article-overlay-author">✦ ${art.author}</p>
+        <div class="article-overlay-body">${art.body}</div>
+        ${filesHtml}
+      `;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeArticle() {
+      document.getElementById('article-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('article-overlay').addEventListener('click', function (e) {
+      if (e.target === this) closeArticle();
+    });
+
+
+    // ══════════════════════════════════════════
+    //   FACULTY MODAL DATA & CONTROLLERS
+    // ══════════════════════════════════════════
+    const facultyData = {
+      deepika: {
+        name: 'Dr. Deepika Saravagi',
+        role: 'Assistant Professor · Computer Department | STTP Coordinator',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi.png',
+        tag: 'Double Best Paper · Patent Holder · NVIDIA Certified',
+        tagColor: '#7C3AED',
+        bio: `
+          <p><strong>Dr. Deepika Saravagi</strong> is an Assistant Professor in the Computer Department at Thakur College of Engineering &amp; Technology (TCET), Mumbai. She is a distinguished researcher and STTP Coordinator with prolific contributions in quantum-safe cryptography, digital well-being, and academic learning paradigms.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Patents &amp; Intellectual Property</h4>
+          <p><strong>Published Indian Patent:</strong> "QUANTUM-RESILIENT HYBRID CRYPTOGRAPHIC ACCELERATOR FOR POST-QUANTUM SECURE DATA TRANSACTIONS" (Application No. 202541115863 A, Published in The Patent Office Journal No. 50/2025, Govt. of India, Dec 12, 2025).</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">MULTICON-W 2026 (IC-ICN 2026) Best Paper Awards</h4>
+          <p>• <strong>Paper 1:</strong> "Impact of Short-Form Video Consumption on Attention &amp; Digital Well-being Among College Students" — Awarded Best Paper Award.<br/>
+          • <strong>Paper 2:</strong> "A Case Study on Research-Based Learning (RBL) Guidelines at TCET, Mumbai" — Awarded Best Paper Award.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Certifications &amp; Reviewer Roles</h4>
+          <p>• <strong>NVIDIA Developer Program:</strong> "Fundamentals of Accelerated Computing with CUDA Python" (Issued March 2026)<br/>
+          • <strong>Peer Reviewer:</strong> European Journal of Science, Innovation and Technology (EJSIT) &amp; IEEE Conferences<br/>
+          • <strong>UGC Malaviya Mission:</strong> NEP-2020 Teacher Training Programme &amp; AICTE ATAL Academy Workshops</p>
+        `,
+        files: [
+          { label: 'Published Patent (Official Gazette)', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi/patent.pdf' },
+          { label: 'MULTICON-W 2026 Best Paper Certificates', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Multicon Certificate/Cetificate BEST PAPPER FACULTY.pdf' },
+          { label: 'NVIDIA CUDA Python Certification', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi/My Learning _ NVIDIA.pdf' },
+          { label: 'CVMI 2026 Presentation Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi/CVMI2026_Certificate_CVMI2026-713_Dr__Deepika_Saravagi.png' },
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      rinkle: {
+        name: 'Mrs. Rinkle Solanki',
+        role: 'Head of Department (HOD) · BCA & Computer Departments',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/rinkle.png',
+        tag: 'Department Leadership · Best Paper · STTP Chair',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Mrs. Rinkle Solanki</strong> is the Head of the Computer Applications Department (BCA &amp; MCA) at Thakur College of Engineering &amp; Technology (TCET), Mumbai. Under her leadership, the department has achieved outstanding milestones in academic excellence, interdisciplinary research, and industry collaborations.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Research &amp; Conference Accolades</h4>
+          <p>• <strong>MULTICON-W 2026 Best Paper:</strong> "Impact of Short-Form Video Consumption on Attention &amp; Digital Well-being Among College Students"<br/>
+          • <strong>Full Length Research:</strong> "AI-Driven Intelligent Load Balancing in Cloud Computing Environments" (IC-ICN 2026)<br/>
+          • <strong>Leadership:</strong> Program Chair &amp; Convener for the National Level One-Week ISTE Approved STTP "Research 360°: AI-Driven Research Excellence and Thesis Crafting".</p>
+        `,
+        files: [
+          { label: 'MULTICON-W 2026 Best Paper Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Multicon Certificate/Cetificate BEST PAPPER FACULTY.pdf' },
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      jaynish: {
+        name: 'Mr. Jaynish Kumar Mandal',
+        role: 'Deputy Head of Department (Dy. HOD) · BCA & MCA',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/jaynish.png',
+        tag: 'Deputy HOD · Best Paper Award · STTP Convener',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Mr. Jaynish Kumar Mandal</strong> serves as the Deputy Head of Department for BCA &amp; MCA at TCET Mumbai. He plays a pivotal role in curriculum coordination, student mentoring, and departmental research initiatives.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Key Accomplishments</h4>
+          <p>• <strong>MULTICON-W 2026 Best Paper Award:</strong> "Impact of Short-Form Video Consumption on Attention &amp; Digital Well-being Among College Students"<br/>
+          • <strong>STTP Leadership:</strong> Convener for One-Week ISTE Approved STTP "Research 360°: AI-Driven Research Excellence and Thesis Crafting".</p>
+        `,
+        files: [
+          { label: 'MULTICON-W 2026 Best Paper Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Multicon Certificate/Cetificate BEST PAPPER FACULTY.pdf' },
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      shallu: {
+        name: 'Ms. Shallu Khanna',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Shallu Khanna/Ms. Shallu Khanna_Assistant_Professor.jpg',
+        tag: 'AICTE NITTTR Certified · Industry 5.0 · GenAI Specialist',
+        tagColor: '#7C3AED',
+        bio: `
+          <p><strong>Ms. Shallu Khanna</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, specializing in Next-Generation Artificial Intelligence, Industry 5.0 systems, and Generative Deep Learning paradigms.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">National FDPs &amp; Certifications</h4>
+          <p>• <strong>AICTE Recognized FDP (NITTTR Chandigarh):</strong> "Advancing to Industry 5.0 with AI"<br/>
+          • <strong>AICTE Recognized FDP (NITTTR Chandigarh):</strong> "Generative AI"<br/>
+          • <strong>National Science Lecture:</strong> Dr. M. R. Srinivasan Memorial Lecture (India’s Nuclear Energy Programme)<br/>
+          • <strong>ISTE STTP:</strong> "Research 360°: AI-Driven Research Excellence and Thesis Crafting"</p>
+        `,
+        files: [
+          { label: 'NITTTR AICTE FDP — Industry 5.0 with AI', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Shallu Khanna/nittr certificate.pdf' },
+          { label: 'NITTTR AICTE FDP — Generative AI', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Shallu Khanna/nittr generative ai certificate.pdf' },
+          { label: 'Dr. M. R. Srinivasan Memorial Lecture Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Shallu Khanna/Internal certificate shrinivas memorial leccture_490.pdf' },
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      priya: {
+        name: 'Ms. Priya Salunke',
+        role: 'Assistant Professor · Computer Department',
+        avatarText: 'PS',
+        tag: 'Claude for Research · Research Grants · Applied Math',
+        tagColor: '#1E88E5',
+        bio: `
+          <p><strong>Ms. Priya Salunke</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. Her expertise bridges frontier AI research methods, research proposal funding development, and applied interdisciplinary mathematics.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Certifications &amp; Faculty Development</h4>
+          <p>• <strong>Frontier AI Certification:</strong> "Claude for Academic Research" (Issued July 31, 2026)<br/>
+          • <strong>Research Funding:</strong> 3-Day FDP on Research Proposal Development &amp; Funding (Govt College Rajahmundry)<br/>
+          • <strong>Mathematics:</strong> 5-Day FDP on Transcending Mathematics: Theoretical Escalation to Industrial Innovations (Amity University Kolkata)<br/>
+          • <strong>ISTE STTP:</strong> "Research 360°: AI-Driven Research Excellence and Thesis Crafting"</p>
+        `,
+        files: [
+          { label: 'Claude for Academic Research Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/PRIYA SALUNKE/Certificate (2).pdf' },
+          { label: 'Research Proposal Development FDP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/PRIYA SALUNKE/Certificate (1).pdf' },
+          { label: 'Amity University Mathematics FDP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/PRIYA SALUNKE/PRC_AIAS_FDP_09092025 (1)_removed.pdf' },
+          { label: 'Dr. M. R. Srinivasan Memorial Lecture Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/PRIYA SALUNKE/Internal certificate shrinivas memorial leccture_491.pdf' }
+        ]
+      },
+      aruta: {
+        name: 'Ms. Aruta Jayswal',
+        role: 'Assistant Professor · Computer Department',
+        avatarText: 'AJ',
+        tag: 'IIT Kanpur Blockchain · STTP Researcher',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Ms. Aruta Jayswal</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. She focuses on distributed consensus systems, smart contracts, and blockchain technologies.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Accomplishments</h4>
+          <p>• <strong>IIT Kanpur Advanced Programme:</strong> Faculty Development Programme on Blockchain Architecture &amp; Engineering<br/>
+          • <strong>ISTE STTP:</strong> One-Week Short Term Training Program on "Research 360°: AI-Driven Research Excellence and Thesis Crafting"</p>
+        `,
+        files: [
+          { label: 'IIT Kanpur Blockchain FDP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ArutaJayswal/Aruta Jayswal_Blockchain_IITK.pdf' },
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      samruddhi: {
+        name: 'Ms. Samruddhi Chalke',
+        role: 'Assistant Professor · Computer Department',
+        avatarText: 'SC',
+        tag: 'IIITDM Blockchain Security · Network Architectures',
+        tagColor: '#7C3AED',
+        bio: `
+          <p><strong>Ms. Samruddhi Chalke</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. She conducts research and mentoring in blockchain security, consensus protocols, and network resilience.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Accomplishments</h4>
+          <p>• <strong>IIITDM Jabalpur FDP:</strong> "Blockchain Security and Performance" jointly organized by Electronics &amp; ICT Academies.</p>
+        `,
+        files: [
+          { label: 'IIITDM Jabalpur Blockchain Security Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Samrudhi Chalke/Samruddhi - IIITDM.pdf' }
+        ]
+      },
+      sandeep: {
+        name: 'Mr. Sandeep Vishvakarma',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/sandeep.png',
+        tag: 'Best Paper Award · STTP Researcher',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Mr. Sandeep Vishvakarma</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, engaged in research regarding student digital well-being and computing paradigms.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Accomplishments</h4>
+          <p>• <strong>MULTICON-W 2026 Best Paper Award:</strong> "Impact of Short-Form Video Consumption on Attention &amp; Digital Well-being Among College Students"<br/>
+          • <strong>ISTE STTP:</strong> One-Week STTP on "Research 360°: AI-Driven Research Excellence and Thesis Crafting"</p>
+        `,
+        files: [
+          { label: 'MULTICON-W 2026 Best Paper Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Multicon Certificate/Cetificate BEST PAPPER FACULTY.pdf' },
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      tamanna: {
+        name: 'Ms. Tamanna Agrawal',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/tamana.png',
+        tag: 'Best Paper Award · Pedagogy & Research',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Ms. Tamanna Agrawal</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. She champions research-based learning methodologies and academic excellence.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Accomplishments</h4>
+          <p>• <strong>MULTICON-W 2026 Best Paper Award:</strong> "A Case Study on Research-Based Learning (RBL) Guidelines at TCET, Mumbai"<br/>
+          • <strong>ISTE STTP:</strong> One-Week STTP on "Research 360°: AI-Driven Research Excellence and Thesis Crafting"</p>
+        `,
+        files: [
+          { label: 'MULTICON-W 2026 Best Paper Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Multicon Certificate/Cetificate BEST PAPPER FACULTY.pdf' },
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      amitanand: {
+        name: 'Mr. Amitanand Anurag Mishra',
+        role: 'Assistant Professor · Computer Department',
+        avatarText: 'AM',
+        tag: 'Best Paper Award · Software Systems',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Mr. Amitanand Anurag Mishra</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, active in computer applications research and academic framework formulation.</p>
+          <div class="article-overlay-divider"></div>
+          <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Accomplishments</h4>
+          <p>• <strong>MULTICON-W 2026 Best Paper Award:</strong> "A Case Study on Research-Based Learning (RBL) Guidelines at TCET, Mumbai"<br/>
+          • <strong>ISTE STTP:</strong> One-Week STTP on "Research 360°: AI-Driven Research Excellence and Thesis Crafting"</p>
+        `,
+        files: [
+          { label: 'MULTICON-W 2026 Best Paper Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/Multicon Certificate/Cetificate BEST PAPPER FACULTY.pdf' },
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      dinesh: {
+        name: 'Mr. Dinesh Shirvaikar',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/DineshShirvaikar.png',
+        tag: 'Department Faculty · Systems Specialist',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Mr. Dinesh Shirvaikar</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. He guides students in database architecture, software engineering principles, and systems development.</p>
+        `,
+        files: []
+      },
+      rabi: {
+        name: 'Mr. Rabi Narayan Padhy',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Rabi Narayan Padhy V-1.jpeg',
+        tag: 'Department Faculty · STTP Researcher',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Mr. Rabi Narayan Padhy</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. He actively participates in departmental research development and advanced computing curricula.</p>
+        `,
+        files: [
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      harshita: {
+        name: 'Ms. Harshita Singh',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Harshita Singh.png',
+        tag: 'Department Faculty · STTP Researcher',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Ms. Harshita Singh</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, focusing on information architectures, algorithmic paradigms, and student technical mentorship.</p>
+        `,
+        files: [
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      shreyasi: {
+        name: 'Ms. Shreyasi Karapu',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Shreyasi Karapu.png',
+        tag: 'Department Faculty · STTP Researcher',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Ms. Shreyasi Karapu</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. She specializes in software engineering, applied algorithms, and research methodologies.</p>
+        `,
+        files: [
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      shruti: {
+        name: 'Ms. Shruti Shukla',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/shruti shukla.png',
+        tag: 'Department Faculty · STTP Researcher',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Ms. Shruti Shukla</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, guiding students across web technologies, systems analysis, and project frameworks.</p>
+        `,
+        files: [
+          { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
+        ]
+      },
+      sakshi: {
+        name: 'Ms. Sakshi Singh',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/sakshi_singh.png',
+        tag: 'Department Faculty · Innovation Mentor',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Ms. Sakshi Singh</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. She mentors student teams in application engineering, agile methodologies, and technical publications.</p>
+        `,
+        files: []
+      },
+      aditi: {
+        name: 'Ms. Aditi Shinde',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Aditi Shinde.png',
+        tag: 'Department Faculty · Intelligence & Algorithms',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Ms. Aditi Shinde</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, focusing on computational intelligence, intelligent systems, and student research projects.</p>
+        `,
+        files: []
+      },
+      riya: {
+        name: 'Ms. Riya Shetty',
+        role: 'Assistant Professor · Computer Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Riya_Shetty.png',
+        tag: 'Department Faculty · Information Systems',
+        tagColor: '#4FC3F7',
+        bio: `
+          <p><strong>Ms. Riya Shetty</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, engaged in information system pedagogy and academic mentorship.</p>
+        `,
+        files: []
+      }
+    };
+
+    function filterFaculty(category, btn) {
+      document.querySelectorAll('.faculty-filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      const cards = document.querySelectorAll('.faculty-card');
+      cards.forEach(card => {
+        const cats = card.getAttribute('data-category') || '';
+        if (category === 'all' || cats.includes(category)) {
+          card.classList.remove('hidden-card');
+        } else {
+          card.classList.add('hidden-card');
+        }
+      });
+    }
+
+    function openFacultyModal(key) {
+      const f = facultyData[key];
+      if (!f) return;
+      const overlay = document.getElementById('faculty-overlay');
+      const body = document.getElementById('faculty-overlay-body');
+      const photoHtml = f.photo
+        ? `<a class="article-image-link" href="${f.photo}" target="_blank" rel="noopener noreferrer" aria-label="Open original photo of ${f.name}"><img src="${f.photo}" alt="${f.name}" class="faculty-modal-photo" onerror="this.closest('a').style.display='none'" /></a><p class="article-image-hint">Select the photo to open the original at full size.</p>`
+        : `<div style="height:120px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(79,195,247,0.1),rgba(124,58,237,0.15));border-radius:12px;margin:16px 0;"><span style="font-family:'Orbitron',monospace;font-size:2.4rem;font-weight:900;color:#4FC3F7;">${f.avatarText || 'TCET'}</span></div>`;
+
+      const filesHtml = f.files && f.files.length
+        ? `<div class="article-overlay-divider"></div><h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Available Certificates &amp; Documents</h4><div style="margin-top:6px;display:flex;flex-wrap:wrap;">${f.files.map(file => `<a href="${file.path}" target="_blank" rel="noopener noreferrer" class="article-file-link"><svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>${file.label}</a>`).join('')}</div>`
+        : '';
+
+      body.innerHTML = `
+        <span class="article-overlay-tag" style="border-color:${f.tagColor || '#4FC3F7'};color:${f.tagColor || '#4FC3F7'};background:rgba(79,195,247,0.1);">${f.tag}</span>
+        ${photoHtml}
+        <h2 class="article-overlay-title" style="margin-top:12px;">${f.name}</h2>
+        <p class="article-overlay-author">✦ ${f.role}</p>
+        <div class="article-overlay-body" style="margin-top:16px;">${f.bio}</div>
+        ${filesHtml}
+      `;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeFacultyModal() {
+      const overlay = document.getElementById('faculty-overlay');
+      if (overlay) overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('faculty-overlay')?.addEventListener('click', function (e) {
+      if (e.target === this) closeFacultyModal();
+    });
+
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeFacultyModal(); });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeArticle();
+    });
+
+    // Re-observe new reveal elements in articles section
+    document.querySelectorAll('#articles .reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Cursor sky glow ──
+    const cursorGlow = document.createElement('div');
+    cursorGlow.style.cssText = 'position:fixed;pointer-events:none;z-index:9999;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(79,195,247,0.04) 0%,transparent 70%);transform:translate(-50%,-50%);transition:left 0.12s ease,top 0.12s ease;';
+    document.body.appendChild(cursorGlow);
+    document.addEventListener('mousemove', e => { cursorGlow.style.left = e.clientX + 'px'; cursorGlow.style.top = e.clientY + 'px'; });
+  </script>
+</body>
+
+</html>
