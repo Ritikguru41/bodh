@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BODH 2026 | Building of Digital Horizons — BCA/MCA TCET Mumbai</title>
   <meta name="description"
-    content="BODH 2026: Building of Digital Horizons — The official digital magazine of the BCA/Computer Department at Thakur College of Engineering & Technology, Mumbai." />
+    content="BODH 2026: Building of Digital Horizons — The official digital magazine of the BCA/MCA Department at Thakur College of Engineering & Technology, Mumbai." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -968,6 +968,240 @@
     #faculty-overlay-body {
       padding: 0 32px 32px;
     }
+
+    .committee-member-card {
+      border: 1px solid rgba(79, 195, 247, 0.24);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .committee-member-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(79, 195, 247, 0.6);
+      box-shadow: 0 12px 30px rgba(4, 14, 36, 0.35), 0 0 18px rgba(79, 195, 247, 0.1);
+    }
+
+    .committee-photo-placeholder {
+      aspect-ratio: 4 / 4.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      color: #78c9f3;
+      background: linear-gradient(145deg, rgba(22, 58, 106, 0.8), rgba(7, 22, 51, 0.95));
+      border-bottom: 1px solid rgba(79, 195, 247, 0.2);
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+    }
+
+    .committee-photo-placeholder svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      opacity: 0.75;
+    }
+
+    .committee-member-card .badge-chip {
+      width: fit-content;
+      font-size: 0.55rem;
+      padding: 3px 8px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Keep the magazine comfortable to read on phones and narrow tablets. */
+    @media (max-width: 767px) {
+      html {
+        scroll-padding-top: 4.5rem;
+      }
+
+      #navbar .max-w-7xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      #nav-brand {
+        min-width: 0;
+        gap: 0.5rem;
+      }
+
+      #nav-brand > div:last-child {
+        min-width: 0;
+      }
+
+      #nav-brand > div:last-child span:first-child {
+        font-size: 0.53rem !important;
+        letter-spacing: 0.08em !important;
+      }
+
+      #nav-brand > div:last-child span:last-child {
+        font-size: 0.72rem !important;
+      }
+
+      #mobile-menu-btn {
+        flex-shrink: 0;
+      }
+
+      #hero {
+        min-height: 100svh;
+        padding-top: 5rem;
+        padding-bottom: 4.5rem;
+      }
+
+      #hero .hero-title {
+        font-size: clamp(3.25rem, 17vw, 5rem) !important;
+        letter-spacing: -0.05em !important;
+      }
+
+      #hero .vol-tag {
+        letter-spacing: 0.14em;
+      }
+
+      #hero .flex.flex-wrap.justify-center.gap-4.mt-10 {
+        gap: 0.75rem;
+      }
+
+      #hero .flex.flex-wrap.justify-center.gap-4.mt-10 a {
+        width: min(100%, 19rem);
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      #students,
+      #faculty,
+      #articles {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      #committee {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+      }
+
+      .badge-chip {
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .section-heading-line {
+        gap: 0.35rem;
+      }
+
+      .section-heading-line h2 {
+        max-width: 100%;
+        white-space: normal !important;
+        font-size: clamp(1.2rem, 6vw, 2rem) !important;
+        line-height: 1.2;
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+      }
+
+      .student-achievement-story {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .student-achievement-image {
+        height: clamp(200px, 64vw, 340px);
+      }
+
+      .student-achievement-copy,
+      .faculty-card,
+      .article-card {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .faculty-stat-card {
+        padding: 0.8rem 0.55rem;
+      }
+
+      .faculty-filter-btn {
+        padding: 7px 10px;
+        font-size: 0.62rem;
+        letter-spacing: 0.025em;
+      }
+
+      .faculty-card {
+        padding: 1rem !important;
+      }
+
+      .faculty-card .faculty-profile-img,
+      .faculty-card .faculty-initials-avatar {
+        width: 52px;
+        height: 52px;
+      }
+
+      .faculty-credential-btn {
+        max-width: 100%;
+        white-space: normal;
+        justify-content: center;
+      }
+
+      #article-overlay,
+      #faculty-overlay {
+        padding: 6px;
+        align-items: flex-start;
+      }
+
+      #article-overlay-inner,
+      #faculty-overlay-inner {
+        width: 100%;
+        max-height: calc(100svh - 12px);
+        border-radius: 14px;
+      }
+
+      #article-overlay-body,
+      #faculty-overlay-body {
+        padding: 0 14px 20px;
+      }
+
+      .article-overlay-cover {
+        max-height: 42svh;
+      }
+
+      .article-file-link {
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        padding: 8px 12px;
+      }
+
+      .article-image-hint {
+        text-align: left;
+      }
+
+      #committee article:not(.committee-member-card) {
+        padding: 1.25rem !important;
+      }
+
+      .committee-member-card > div:last-child {
+        padding: 0.75rem 0.55rem;
+      }
+
+      .committee-member-card h3 {
+        font-size: 0.72rem !important;
+        overflow-wrap: anywhere;
+      }
+
+      footer .max-w-7xl > .flex.flex-col {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .faculty-filter-btn {
+        padding: 6px 8px;
+        font-size: 0.57rem;
+      }
+
+      #students .section-heading-line h2,
+      #articles .section-heading-line h2 {
+        font-size: 1.12rem !important;
+      }
+    }
   </style>
 </head>
 
@@ -992,7 +1226,7 @@
           </div>
           <div class="flex flex-col leading-none">
             <span class="font-montserrat text-text-muted group-hover:text-text-primary transition-colors"
-              style="font-size:0.6rem;letter-spacing:0.15em;font-weight:700;text-transform:uppercase;">MCA
+              style="font-size:0.6rem;letter-spacing:0.15em;font-weight:700;text-transform:uppercase;">BCA/MCA
               DEPARTMENT</span>
             <span class="font-montserrat font-semibold text-text-primary text-sm" style="letter-spacing:0.05em;">TCET
               MUMBAI</span>
@@ -1098,7 +1332,7 @@
 
       <!-- Institution -->
       <div class="reveal reveal-delay-4">
-        <p class="font-inter font-medium text-text-primary text-base md:text-lg mb-1">Computer Department</p>
+        <p class="font-inter font-medium text-text-primary text-base md:text-lg mb-1">BCA/MCA Department</p>
         <p class="font-inter text-text-muted text-sm md:text-base">Thakur College of Engineering &amp; Technology</p>
         <p class="font-inter text-text-muted text-sm">TCET Mumbai</p>
       </div>
@@ -1247,7 +1481,7 @@
           </h2>
         </div>
         <p class="text-text-muted text-sm mt-4 font-inter max-w-3xl mx-auto leading-relaxed">
-          Celebrating the distinguished faculty members of the Computer Applications Department (BCA &amp; MCA) at TCET
+          Celebrating the distinguished faculty members of the BCA/MCA Department at TCET
           Mumbai — driving groundbreaking research, intellectual property patents, national certifications, and
           visionary academic leadership.
         </p>
@@ -1259,7 +1493,7 @@
           <div class="font-orbitron font-black text-2xl md:text-3xl text-cyan-glow mb-1">18+</div>
           <div class="font-montserrat font-semibold text-text-primary text-xs tracking-wider uppercase">Esteemed Faculty
           </div>
-          <div class="text-text-muted text-xs mt-1">MCA &amp; BCA Department</div>
+          <div class="text-text-muted text-xs mt-1">BCA/MCA Department</div>
         </div>
         <div class="faculty-stat-card">
           <div class="font-orbitron font-black text-2xl md:text-3xl text-neon-purple mb-1">6</div>
@@ -1403,7 +1637,7 @@
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Dr. Deepika Saravagi
                 </h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(124,58,237,0.15);color:#A78BFA;border-color:rgba(124,58,237,0.4);">2
@@ -1459,7 +1693,7 @@
                 onerror="this.outerHTML='<div class=faculty-initials-avatar style=border-color:#4FC3F7;color:#4FC3F7;>RS</div>'" />
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mrs. Rinkle Solanki</h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Head of Department (HOD) · BCA &amp; MCA</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Head of BCA/MCA Department (HOD)</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Head
@@ -1515,7 +1749,7 @@
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mr. Jaynish Kumar Mandal
                 </h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Deputy HOD · BCA &amp; Computer Departments</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Deputy HOD · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Deputy
@@ -1543,7 +1777,7 @@
                 <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📚 Academic
                   Leadership</p>
                 <p class="text-text-muted text-xs font-inter leading-relaxed">Directing student research initiatives and
-                  innovation competitions across BCA &amp; MCA cohorts.</p>
+                  innovation competitions across BCA/MCA cohorts.</p>
               </div>
             </div>
           </div>
@@ -1565,11 +1799,11 @@
             style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
           <div>
             <div class="flex items-center gap-4 mb-5">
-              <img src="FACULTY -20261021T045428Z-1-001/FACULTY/Shallu Khanna.png" alt="Ms. Shallu Khanna"
+              <img src="FACULTY -20261021T045428Z-1-001/FACULTY/Shallu Khanna/Ms. Shallu Khanna_Assistant_Professor.jpg" alt="Ms. Shallu Khanna"
                 class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>SK</div>'" />
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Shallu Khanna</h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Industry
@@ -1627,7 +1861,7 @@
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mr. Sandeep Vishvakarma
                 </h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(124,58,237,0.15);color:#A78BFA;border-color:rgba(124,58,237,0.4);">Best
@@ -1673,7 +1907,7 @@
                 class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>TA</div>'" />
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Tamanna Agrawal</h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(124,58,237,0.15);color:#A78BFA;border-color:rgba(124,58,237,0.4);">Best
@@ -1721,7 +1955,7 @@
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mr. Dinesh Shirvaikar
                 </h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Core
@@ -1763,7 +1997,7 @@
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mr. Rabi Narayan Padhy
                 </h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">STTP
@@ -1803,7 +2037,7 @@
                 class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>HS</div>'" />
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Harshita Singh</h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">STTP
@@ -1843,7 +2077,7 @@
                 class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>SK</div>'" />
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Shreyasi Karapu</h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">STTP
@@ -1883,7 +2117,7 @@
                 class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>SS</div>'" />
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Shruti Shukla</h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">STTP
@@ -1923,7 +2157,7 @@
                 class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>SS</div>'" />
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Sakshi Singh</h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">App
@@ -1963,7 +2197,7 @@
                 class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>AS</div>'" />
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Aditi Shinde</h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Computational
@@ -2003,7 +2237,7 @@
                 class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>RS</div>'" />
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Riya Shetty</h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · Computer Department</p>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
                 <div class="flex flex-wrap gap-1.5 mt-2">
                   <span class="badge-chip"
                     style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Information
@@ -2063,7 +2297,7 @@
           </h2>
         </div>
         <p class="text-text-muted text-sm mt-4 font-inter max-w-xl mx-auto">
-          Research papers, achievements, and insights from the BCA/Computer Department at TCET Mumbai — curated for BODH
+          Research papers, achievements, and insights from the BCA/MCA Department at TCET Mumbai — curated for BODH
           2026.
         </p>
       </div>
@@ -2186,7 +2420,7 @@
             </h3>
             <p class="text-text-muted text-xs leading-relaxed mb-4 flex-1">
               Yash Tulaskar (MCA B, Roll 39) participated in the prestigious <strong class="text-text-primary">Aavishkar
-                Research Convention</strong>, representing the Computer Department with a compelling research
+                Research Convention</strong>, representing the BCA/MCA Department with a compelling research
               presentation.
             </p>
             <div class="flex items-center justify-between mt-auto pt-3"
@@ -2374,28 +2608,78 @@
         </p>
       </div>
 
-      <article class="glass-card rounded-2xl p-6 md:p-10 relative overflow-hidden reveal">
-        <div class="absolute top-0 left-0 right-0 h-px"
-          style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.5),transparent);"></div>
-        <div class="flex flex-col md:flex-row items-start gap-6 md:gap-8">
-          <div class="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
-            style="background:linear-gradient(135deg,rgba(79,195,247,0.14),rgba(21,101,192,0.2));border:1px solid rgba(79,195,247,0.32);">
-            <svg class="w-8 h-8" fill="none" stroke="#4FC3F7" viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M16 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2m16 0v-2a4 4 0 00-3-3.87M14 3.13a4 4 0 010 7.75M14 7a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
+      <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal">
+          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            <span>Photo to be added</span>
           </div>
-          <div class="flex-1">
-            <div class="badge-chip mb-3">Editorial · Design · Publication</div>
-            <h3 class="font-montserrat font-bold text-text-primary text-xl md:text-2xl mb-3">BODH 2026 Magazine
-              Committee</h3>
-            <p class="font-inter text-text-muted text-sm md:text-base leading-relaxed max-w-3xl">
-              The student editorial team curated and designed the bulletin, bringing its stories and event highlights
-              together as the BODH 2026 digital magazine.
-            </p>
+          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 01</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
+        </article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-1">
+          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            <span>Photo to be added</span>
           </div>
-        </div>
-      </article>
+          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 02</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
+        </article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-2">
+          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            <span>Photo to be added</span>
+          </div>
+          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 03</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
+        </article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-3">
+          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            <span>Photo to be added</span>
+          </div>
+          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 04</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
+        </article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-4">
+          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            <span>Photo to be added</span>
+          </div>
+          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 05</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
+        </article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal">
+          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 6">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            <span>Photo to be added</span>
+          </div>
+          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 06</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
+        </article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-1">
+          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 7">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            <span>Photo to be added</span>
+          </div>
+          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 07</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
+        </article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-2">
+          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 8">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            <span>Photo to be added</span>
+          </div>
+          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 08</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
+        </article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-3">
+          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 9">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            <span>Photo to be added</span>
+          </div>
+          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 09</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
+        </article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-4">
+          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            <span>Photo to be added</span>
+          </div>
+          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 10</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -2461,7 +2745,7 @@
             </div>
           </div>
           <p class="font-inter text-text-muted text-xs leading-relaxed max-w-xs">
-            The official digital magazine of the Computer Department, celebrating the innovations, achievements, and
+            The official digital magazine of the BCA/MCA Department, celebrating the innovations, achievements, and
             milestones of TCET Mumbai.
           </p>
         </div>
@@ -2476,7 +2760,7 @@
             400101<br />Maharashtra, India</p>
           <div class="flex items-center gap-2 mt-4">
             <div class="w-1.5 h-1.5 rounded-full bg-cyan-glow animate-pulse"></div>
-            <span class="text-text-muted text-xs">Computer Department</span>
+            <span class="text-text-muted text-xs">BCA/MCA Department</span>
           </div>
         </div>
 
@@ -2517,7 +2801,7 @@
       <div class="h-px w-full mb-6"
         style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.15),transparent);"></div>
       <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p class="font-inter text-text-muted text-xs">© 2026 BCA/Computer Department TCET. All Rights Reserved.</p>
+        <p class="font-inter text-text-muted text-xs">© 2026 BCA/MCA Department TCET. All Rights Reserved.</p>
         <div class="flex items-center gap-2">
           <div class="w-1.5 h-1.5 rounded-full"
             style="background:#4FC3F7;box-shadow:0 0 6px #4FC3F7;animation:pulse 2s infinite;"></div>
@@ -2691,7 +2975,7 @@
           <p><strong>Tilak Yogesh Gupta</strong> (SY MCA A, Roll No. 27) earned a certification in <strong>AI Fundamentals</strong> through an evaluated research paper presentation.</p>
           <div class="article-overlay-divider"></div>
           <p>The AI Fundamentals certification validates foundational competencies across supervised and unsupervised machine learning, deep neural network architectures, and natural language processing pipelines.</p>
-          <p>This achievement highlights the Computer Department's ongoing support for student-driven research in artificial intelligence.</p>
+          <p>This achievement highlights the BCA/MCA Department's ongoing support for student-driven research in artificial intelligence.</p>
           <div class="article-overlay-divider"></div>
           <p><strong>Department:</strong> MCA, Thakur College of Engineering &amp; Technology, Mumbai<br/>
           <strong>Year:</strong> Second Year MCA (SY MCA A)<br/>
@@ -2782,7 +3066,7 @@
         tag: 'Tech Fest · Dual 2nd Prize',
         tagColor: '#7C3AED',
         title: 'GNIMS Tech Fest Dual 2nd Prize — Harsh Rahul Vaidya',
-        author: 'Harsh Rahul Vaidya · Computer Department',
+        author: 'Harsh Rahul Vaidya · BCA/MCA Department',
         coverImg: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Harsh Rahul Vaidya/pic.jpeg',
         body: `
           <p><strong>Harsh Rahul Vaidya</strong> represented TCET Mumbai at the inter-college tech fest hosted by GNIMS, Matunga.</p>
@@ -2834,12 +3118,12 @@
     const facultyData = {
       deepika: {
         name: 'Dr. Deepika Saravagi',
-        role: 'Assistant Professor · Computer Department | STTP Coordinator',
+        role: 'Assistant Professor · BCA/MCA Department | STTP Coordinator',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Dr. Deepika Saravagi.png',
         tag: 'Double Best Paper · Patent Holder · NVIDIA Certified',
         tagColor: '#7C3AED',
         bio: `
-          <p><strong>Dr. Deepika Saravagi</strong> is an Assistant Professor in the Computer Department at Thakur College of Engineering &amp; Technology (TCET), Mumbai. She is a distinguished researcher and STTP Coordinator with prolific contributions in quantum-safe cryptography, digital well-being, and academic learning paradigms.</p>
+          <p><strong>Dr. Deepika Saravagi</strong> is an Assistant Professor in the BCA/MCA Department at Thakur College of Engineering &amp; Technology (TCET), Mumbai. She is a distinguished researcher and STTP Coordinator with prolific contributions in quantum-safe cryptography, digital well-being, and academic learning paradigms.</p>
           <div class="article-overlay-divider"></div>
           <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Patents &amp; Intellectual Property</h4>
           <p><strong>Published Indian Patent:</strong> "QUANTUM-RESILIENT HYBRID CRYPTOGRAPHIC ACCELERATOR FOR POST-QUANTUM SECURE DATA TRANSACTIONS" (Application No. 202541115863 A, Published in The Patent Office Journal No. 50/2025, Govt. of India, Dec 12, 2025).</p>
@@ -2863,12 +3147,12 @@
       },
       rinkle: {
         name: 'Mrs. Rinkle Solanki',
-        role: 'Head of Department (HOD) · BCA & Computer Departments',
+        role: 'Head of BCA/MCA Department (HOD)',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/rinkle.png',
         tag: 'Department Leadership · Best Paper · STTP Chair',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Mrs. Rinkle Solanki</strong> is the Head of the Computer Applications Department (BCA &amp; MCA) at Thakur College of Engineering &amp; Technology (TCET), Mumbai. Under her leadership, the department has achieved outstanding milestones in academic excellence, interdisciplinary research, and industry collaborations.</p>
+          <p><strong>Mrs. Rinkle Solanki</strong> is the Head of the BCA/MCA Department (BCA/MCA) at Thakur College of Engineering &amp; Technology (TCET), Mumbai. Under her leadership, the department has achieved outstanding milestones in academic excellence, interdisciplinary research, and industry collaborations.</p>
           <div class="article-overlay-divider"></div>
           <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Research &amp; Conference Accolades</h4>
           <p>• <strong>MULTICON-W 2026 Best Paper:</strong> "Impact of Short-Form Video Consumption on Attention &amp; Digital Well-being Among College Students"<br/>
@@ -2882,12 +3166,12 @@
       },
       jaynish: {
         name: 'Mr. Jaynish Kumar Mandal',
-        role: 'Deputy Head of Department (Dy. HOD) · BCA & MCA',
+        role: 'Deputy Head of Department (Dy. HOD) · BCA/MCA',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/jaynish.png',
         tag: 'Deputy HOD · Best Paper Award · STTP Convener',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Mr. Jaynish Kumar Mandal</strong> serves as the Deputy Head of Department for BCA &amp; MCA at TCET Mumbai. He plays a pivotal role in curriculum coordination, student mentoring, and departmental research initiatives.</p>
+          <p><strong>Mr. Jaynish Kumar Mandal</strong> serves as the Deputy Head of Department for BCA/MCA at TCET Mumbai. He plays a pivotal role in curriculum coordination, student mentoring, and departmental research initiatives.</p>
           <div class="article-overlay-divider"></div>
           <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Key Accomplishments</h4>
           <p>• <strong>MULTICON-W 2026 Best Paper Award:</strong> "Impact of Short-Form Video Consumption on Attention &amp; Digital Well-being Among College Students"<br/>
@@ -2900,12 +3184,12 @@
       },
       shallu: {
         name: 'Ms. Shallu Khanna',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Shallu Khanna/Ms. Shallu Khanna_Assistant_Professor.jpg',
         tag: 'AICTE NITTTR Certified · Industry 5.0 · GenAI Specialist',
         tagColor: '#7C3AED',
         bio: `
-          <p><strong>Ms. Shallu Khanna</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, specializing in Next-Generation Artificial Intelligence, Industry 5.0 systems, and Generative Deep Learning paradigms.</p>
+          <p><strong>Ms. Shallu Khanna</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai, specializing in Next-Generation Artificial Intelligence, Industry 5.0 systems, and Generative Deep Learning paradigms.</p>
           <div class="article-overlay-divider"></div>
           <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">National FDPs &amp; Certifications</h4>
           <p>• <strong>AICTE Recognized FDP (NITTTR Chandigarh):</strong> "Advancing to Industry 5.0 with AI"<br/>
@@ -2922,12 +3206,12 @@
       },
       priya: {
         name: 'Ms. Priya Salunke',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         avatarText: 'PS',
         tag: 'Claude for Research · Research Grants · Applied Math',
         tagColor: '#1E88E5',
         bio: `
-          <p><strong>Ms. Priya Salunke</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. Her expertise bridges frontier AI research methods, research proposal funding development, and applied interdisciplinary mathematics.</p>
+          <p><strong>Ms. Priya Salunke</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai. Her expertise bridges frontier AI research methods, research proposal funding development, and applied interdisciplinary mathematics.</p>
           <div class="article-overlay-divider"></div>
           <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Certifications &amp; Faculty Development</h4>
           <p>• <strong>Frontier AI Certification:</strong> "Claude for Academic Research" (Issued July 31, 2026)<br/>
@@ -2944,12 +3228,12 @@
       },
       aruta: {
         name: 'Ms. Aruta Jayswal',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         avatarText: 'AJ',
         tag: 'IIT Kanpur Blockchain · STTP Researcher',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Ms. Aruta Jayswal</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. She focuses on distributed consensus systems, smart contracts, and blockchain technologies.</p>
+          <p><strong>Ms. Aruta Jayswal</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai. She focuses on distributed consensus systems, smart contracts, and blockchain technologies.</p>
           <div class="article-overlay-divider"></div>
           <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Accomplishments</h4>
           <p>• <strong>IIT Kanpur Advanced Programme:</strong> Faculty Development Programme on Blockchain Architecture &amp; Engineering<br/>
@@ -2962,12 +3246,12 @@
       },
       samruddhi: {
         name: 'Ms. Samruddhi Chalke',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         avatarText: 'SC',
         tag: 'IIITDM Blockchain Security · Network Architectures',
         tagColor: '#7C3AED',
         bio: `
-          <p><strong>Ms. Samruddhi Chalke</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. She conducts research and mentoring in blockchain security, consensus protocols, and network resilience.</p>
+          <p><strong>Ms. Samruddhi Chalke</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai. She conducts research and mentoring in blockchain security, consensus protocols, and network resilience.</p>
           <div class="article-overlay-divider"></div>
           <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Accomplishments</h4>
           <p>• <strong>IIITDM Jabalpur FDP:</strong> "Blockchain Security and Performance" jointly organized by Electronics &amp; ICT Academies.</p>
@@ -2978,12 +3262,12 @@
       },
       sandeep: {
         name: 'Mr. Sandeep Vishvakarma',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/sandeep.png',
         tag: 'Best Paper Award · STTP Researcher',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Mr. Sandeep Vishvakarma</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, engaged in research regarding student digital well-being and computing paradigms.</p>
+          <p><strong>Mr. Sandeep Vishvakarma</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai, engaged in research regarding student digital well-being and computing paradigms.</p>
           <div class="article-overlay-divider"></div>
           <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Accomplishments</h4>
           <p>• <strong>MULTICON-W 2026 Best Paper Award:</strong> "Impact of Short-Form Video Consumption on Attention &amp; Digital Well-being Among College Students"<br/>
@@ -2996,12 +3280,12 @@
       },
       tamanna: {
         name: 'Ms. Tamanna Agrawal',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/tamana.png',
         tag: 'Best Paper Award · Pedagogy & Research',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Ms. Tamanna Agrawal</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. She champions research-based learning methodologies and academic excellence.</p>
+          <p><strong>Ms. Tamanna Agrawal</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai. She champions research-based learning methodologies and academic excellence.</p>
           <div class="article-overlay-divider"></div>
           <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Accomplishments</h4>
           <p>• <strong>MULTICON-W 2026 Best Paper Award:</strong> "A Case Study on Research-Based Learning (RBL) Guidelines at TCET, Mumbai"<br/>
@@ -3014,12 +3298,12 @@
       },
       amitanand: {
         name: 'Mr. Amitanand Anurag Mishra',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         avatarText: 'AM',
         tag: 'Best Paper Award · Software Systems',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Mr. Amitanand Anurag Mishra</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, active in computer applications research and academic framework formulation.</p>
+          <p><strong>Mr. Amitanand Anurag Mishra</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai, active in computer applications research and academic framework formulation.</p>
           <div class="article-overlay-divider"></div>
           <h4 style="color:#4FC3F7;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Accomplishments</h4>
           <p>• <strong>MULTICON-W 2026 Best Paper Award:</strong> "A Case Study on Research-Based Learning (RBL) Guidelines at TCET, Mumbai"<br/>
@@ -3032,23 +3316,23 @@
       },
       dinesh: {
         name: 'Mr. Dinesh Shirvaikar',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/DineshShirvaikar.png',
         tag: 'Department Faculty · Systems Specialist',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Mr. Dinesh Shirvaikar</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. He guides students in database architecture, software engineering principles, and systems development.</p>
+          <p><strong>Mr. Dinesh Shirvaikar</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai. He guides students in database architecture, software engineering principles, and systems development.</p>
         `,
         files: []
       },
       rabi: {
         name: 'Mr. Rabi Narayan Padhy',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Rabi Narayan Padhy V-1.jpeg',
         tag: 'Department Faculty · STTP Researcher',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Mr. Rabi Narayan Padhy</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. He actively participates in departmental research development and advanced computing curricula.</p>
+          <p><strong>Mr. Rabi Narayan Padhy</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai. He actively participates in departmental research development and advanced computing curricula.</p>
         `,
         files: [
           { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
@@ -3056,12 +3340,12 @@
       },
       harshita: {
         name: 'Ms. Harshita Singh',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Harshita Singh.png',
         tag: 'Department Faculty · STTP Researcher',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Ms. Harshita Singh</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, focusing on information architectures, algorithmic paradigms, and student technical mentorship.</p>
+          <p><strong>Ms. Harshita Singh</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai, focusing on information architectures, algorithmic paradigms, and student technical mentorship.</p>
         `,
         files: [
           { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
@@ -3069,12 +3353,12 @@
       },
       shreyasi: {
         name: 'Ms. Shreyasi Karapu',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Shreyasi Karapu.png',
         tag: 'Department Faculty · STTP Researcher',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Ms. Shreyasi Karapu</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. She specializes in software engineering, applied algorithms, and research methodologies.</p>
+          <p><strong>Ms. Shreyasi Karapu</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai. She specializes in software engineering, applied algorithms, and research methodologies.</p>
         `,
         files: [
           { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
@@ -3082,12 +3366,12 @@
       },
       shruti: {
         name: 'Ms. Shruti Shukla',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/shruti shukla.png',
         tag: 'Department Faculty · STTP Researcher',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Ms. Shruti Shukla</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, guiding students across web technologies, systems analysis, and project frameworks.</p>
+          <p><strong>Ms. Shruti Shukla</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai, guiding students across web technologies, systems analysis, and project frameworks.</p>
         `,
         files: [
           { label: 'ISTE Approved STTP Certificate', path: 'FACULTY -20261021T045428Z-1-001/FACULTY/ISTE STTP.pdf' }
@@ -3095,34 +3379,34 @@
       },
       sakshi: {
         name: 'Ms. Sakshi Singh',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/sakshi_singh.png',
         tag: 'Department Faculty · Innovation Mentor',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Ms. Sakshi Singh</strong> is an Assistant Professor in the Computer Department at TCET Mumbai. She mentors student teams in application engineering, agile methodologies, and technical publications.</p>
+          <p><strong>Ms. Sakshi Singh</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai. She mentors student teams in application engineering, agile methodologies, and technical publications.</p>
         `,
         files: []
       },
       aditi: {
         name: 'Ms. Aditi Shinde',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Aditi Shinde.png',
         tag: 'Department Faculty · Intelligence & Algorithms',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Ms. Aditi Shinde</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, focusing on computational intelligence, intelligent systems, and student research projects.</p>
+          <p><strong>Ms. Aditi Shinde</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai, focusing on computational intelligence, intelligent systems, and student research projects.</p>
         `,
         files: []
       },
       riya: {
         name: 'Ms. Riya Shetty',
-        role: 'Assistant Professor · Computer Department',
+        role: 'Assistant Professor · BCA/MCA Department',
         photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/Riya_Shetty.png',
         tag: 'Department Faculty · Information Systems',
         tagColor: '#4FC3F7',
         bio: `
-          <p><strong>Ms. Riya Shetty</strong> is an Assistant Professor in the Computer Department at TCET Mumbai, engaged in information system pedagogy and academic mentorship.</p>
+          <p><strong>Ms. Riya Shetty</strong> is an Assistant Professor in the BCA/MCA Department at TCET Mumbai, engaged in information system pedagogy and academic mentorship.</p>
         `,
         files: []
       }
