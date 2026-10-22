@@ -882,6 +882,12 @@
       display: none !important;
     }
 
+    #faculty-grid #faculty-card-rinkle { order: -5; }
+    #faculty-grid #faculty-card-jaynish { order: -4; }
+    #faculty-grid #faculty-card-tamanna { order: -3; }
+    #faculty-grid #faculty-card-deepika { order: -2; }
+    #faculty-grid #faculty-card-priya { order: -1; }
+
     .faculty-credential-btn {
       display: inline-flex;
       align-items: center;
@@ -1856,7 +1862,7 @@
             style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
           <div>
             <div class="flex items-center gap-4 mb-5">
-              <img src="FACULTY -20261021T045428Z-1-001/FACULTY/sandeep.png" alt="Mr. Sandeep Vishvakarma"
+              <img src="sandeep.png" alt="Mr. Sandeep Vishvakarma"
                 class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>SV</div>'" />
               <div>
                 <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mr. Sandeep Vishvakarma
@@ -1943,46 +1949,7 @@
         </article>
 
 
-        <!-- 11: Mr. Dinesh Shirvaikar -->
-        <article id="faculty-card-dinesh" data-category="faculty"
-          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-2 flex flex-col justify-between">
-          <div class="absolute top-0 left-0 right-0 h-px"
-            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
-          <div>
-            <div class="flex items-center gap-4 mb-5">
-              <img src="FACULTY -20261021T045428Z-1-001/FACULTY/DineshShirvaikar.png" alt="Mr. Dinesh Shirvaikar"
-                class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>DS</div>'" />
-              <div>
-                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Mr. Dinesh Shirvaikar
-                </h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
-                <div class="flex flex-wrap gap-1.5 mt-2">
-                  <span class="badge-chip"
-                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">Core
-                    Systems</span>
-                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Academic Mentor</span>
-                </div>
-              </div>
-            </div>
-            <div class="space-y-2.5 mb-4">
-              <div class="achievement-badge">
-                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">💻 Core
-                  Computing &amp; Mentorship</p>
-                <p class="text-text-muted text-xs font-inter leading-relaxed">Providing foundational leadership in
-                  systems programming, data infrastructure, and project architecture for MCA students.</p>
-              </div>
-            </div>
-          </div>
-          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('dinesh')">
-            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
-            View Full Credentials &amp; Documents
-          </button>
-        </article>
+
 
         <!-- 12: Mr. Rabi Narayan Padhy -->
         <article id="faculty-card-rabi" data-category="research faculty"
@@ -2026,45 +1993,7 @@
           </button>
         </article>
 
-        <!-- 13: Ms. Harshita Singh -->
-        <article id="faculty-card-harshita" data-category="research faculty"
-          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-1 flex flex-col justify-between">
-          <div class="absolute top-0 left-0 right-0 h-px"
-            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
-          <div>
-            <div class="flex items-center gap-4 mb-5">
-              <img src="FACULTY -20261021T045428Z-1-001/FACULTY/Harshita Singh.png" alt="Ms. Harshita Singh"
-                class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>HS</div>'" />
-              <div>
-                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Harshita Singh</h3>
-                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
-                <div class="flex flex-wrap gap-1.5 mt-2">
-                  <span class="badge-chip"
-                    style="font-size:0.58rem;padding:2px 8px;background:rgba(79,195,247,0.15);color:#4FC3F7;border-color:rgba(79,195,247,0.4);">STTP
-                    Member</span>
-                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Information Systems</span>
-                </div>
-              </div>
-            </div>
-            <div class="space-y-2.5 mb-4">
-              <div class="achievement-badge">
-                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📑 STTP
-                  Research 360°</p>
-                <p class="text-text-muted text-xs font-inter leading-relaxed">Participant in ISTE Approved One-Week STTP
-                  on AI-Driven Research Excellence and Thesis Crafting.</p>
-              </div>
-            </div>
-          </div>
-          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('harshita')">
-            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
-            View Full Credentials &amp; Documents
-          </button>
-        </article>
+
 
         <!-- 14: Ms. Shreyasi Karapu -->
         <article id="faculty-card-shreyasi" data-category="research faculty"
@@ -2266,7 +2195,47 @@
           </button>
         </article>
 
-      </div>
+
+        <!-- Faculty profile: priya -->
+        <article id="faculty-card-priya" data-category="research faculty"
+          class="glass-card faculty-card rounded-2xl p-6 relative overflow-hidden reveal reveal-delay-1 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 right-0 h-px"
+            style="background:linear-gradient(90deg,transparent,rgba(79,195,247,0.7),transparent);"></div>
+          <div>
+            <div class="flex items-center gap-4 mb-5">
+              <img src="FACULTY -20261021T045428Z-1-001/FACULTY/priya salunke.jpeg" alt="Ms. Priya Salunke"
+                class="faculty-profile-img" onerror="this.outerHTML='<div class=faculty-initials-avatar>PS</div>'" />
+              <div>
+                <h3 class="font-montserrat font-bold text-text-primary text-base leading-tight">Ms. Priya Salunke</h3>
+                <p class="font-inter text-text-muted text-xs mt-0.5">Assistant Professor · BCA/MCA Department</p>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">AI Research</span>
+                  <span class="badge-chip" style="font-size:0.58rem;padding:2px 8px;">Research Grants</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2.5 mb-4">
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">🤖 Claude for Academic Research</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Frontier AI certification focused on using Claude in academic research.</p>
+              </div>
+              <div class="achievement-badge">
+                <p class="text-xs text-cyan-glow font-bold font-montserrat uppercase tracking-wider mb-0.5">📚 Research Development</p>
+                <p class="text-text-muted text-xs font-inter leading-relaxed">Faculty development in research proposal development and applied mathematics.</p>
+              </div>
+            </div>
+          </div>
+          <button class="faculty-credential-btn w-full justify-center" onclick="openFacultyModal('priya')">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            View Full Credentials &amp; Documents
+          </button>
+        </article>
+</div>
     </div>
   </section>
 
@@ -2305,24 +2274,23 @@
       <!-- Articles grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
-        <!-- Article 1: IAF Offer Letter - Meet Bagwe -->
+        <!-- Article 1: Build Battle Coding Event - Meet Bagwe -->
         <article id="article-card-1" class="article-card rounded-2xl overflow-hidden reveal reveal-delay-1">
           <div class="article-img-wrap">
             <img src="STUDENTS-20261021T045433Z-1-001/STUDENTS/Meet Bagwe SYBCA A 05/Screenshot_20261006-184143 (1).png"
-              alt="IAF Offer Letter — Meet Gopal Bagwe" loading="lazy"
+              alt="Meet Bagwe's Build Battle Coding Event certificate — 2nd place" loading="lazy"
               onerror="this.parentElement.outerHTML='<div class=article-img-placeholder><span class=font-montserrat>Achievement</span></div>'" />
           </div>
           <div class="p-5 flex flex-col flex-1">
             <div class="badge-chip mb-3"
-              style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.3);color:#7C3AED;">Offer Letter ·
-              BCA</div>
+              style="background:rgba(79,195,247,0.1);border-color:rgba(79,195,247,0.3);color:#4FC3F7;">Build Battle ·
+              Coding Event</div>
             <h3 class="font-montserrat font-bold text-text-primary text-sm leading-snug mb-2">
-              IAF Offer Letter — Meet Gopal Bagwe
+              Build Battle Coding Event 2026 — 2nd Place
             </h3>
             <p class="text-text-muted text-xs leading-relaxed mb-4 flex-1">
-              Meet Gopal Bagwe (SYBCA A, Roll No. 05) received a prestigious <strong class="text-text-primary">Offer
-                Letter</strong> for an industry internship position, marking a proud milestone for the BCA Department at
-              TCET Mumbai.
+              Meet Bagwe (SYBCA A, Roll No. 05) earned <strong class="text-text-primary">2nd Place</strong> in TCET's
+              Build Battle website development coding event on 4 May 2026.
             </p>
             <div class="flex items-center justify-between mt-auto pt-3"
               style="border-top:1px solid rgba(66,165,245,0.1);">
@@ -2609,76 +2577,16 @@
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
-        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal">
-          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-            <span>Photo to be added</span>
-          </div>
-          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 01</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
-        </article>
-        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-1">
-          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-            <span>Photo to be added</span>
-          </div>
-          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 02</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
-        </article>
-        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-2">
-          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-            <span>Photo to be added</span>
-          </div>
-          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 03</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
-        </article>
-        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-3">
-          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 4">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-            <span>Photo to be added</span>
-          </div>
-          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 04</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
-        </article>
-        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-4">
-          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 5">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-            <span>Photo to be added</span>
-          </div>
-          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 05</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
-        </article>
-        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal">
-          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 6">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-            <span>Photo to be added</span>
-          </div>
-          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 06</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
-        </article>
-        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-1">
-          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 7">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-            <span>Photo to be added</span>
-          </div>
-          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 07</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
-        </article>
-        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-2">
-          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 8">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-            <span>Photo to be added</span>
-          </div>
-          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 08</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
-        </article>
-        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-3">
-          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 9">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-            <span>Photo to be added</span>
-          </div>
-          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 09</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
-        </article>
-        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-4">
-          <div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 10">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
-            <span>Photo to be added</span>
-          </div>
-          <div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 10</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div>
-        </article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal"><div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Photo to be added</span></div><div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 01</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div></article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-1"><div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Photo to be added</span></div><div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 02</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div></article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-2"><div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Photo to be added</span></div><div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 03</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div></article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-3"><div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Photo to be added</span></div><div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 04</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div></article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-4"><div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Photo to be added</span></div><div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 05</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div></article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal"><div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Photo to be added</span></div><div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 06</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div></article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-1"><div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Photo to be added</span></div><div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 07</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div></article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-2"><div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Photo to be added</span></div><div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 08</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div></article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-3"><div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Photo to be added</span></div><div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 09</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div></article>
+        <article class="committee-member-card glass-card rounded-2xl overflow-hidden reveal reveal-delay-4"><div class="committee-photo-placeholder" role="img" aria-label="Photo to be added for magazine team member 10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span>Photo to be added</span></div><div class="p-4 text-center"><p class="badge-chip mx-auto mb-2">TEAM MEMBER 10</p><h3 class="font-montserrat font-bold text-text-primary text-sm">Name to be added</h3><p class="font-inter text-text-muted text-xs mt-1">Role to be added</p></div></article>
       </div>
     </div>
   </section>
@@ -2924,24 +2832,24 @@
     // ── Articles data ──
     const articleData = {
       article1: {
-        tag: 'Defence & Career · Offer Letter',
-        tagColor: '#7C3AED',
-        title: 'Offer Letter Recognition — Meet Gopal Bagwe',
-        author: 'Meet Gopal Bagwe · SYBCA A, Roll No. 05',
+        tag: 'Build Battle · Coding Event',
+        tagColor: '#4FC3F7',
+        title: 'Build Battle Coding Event 2026 — 2nd Place',
+        author: 'Meet Bagwe · SYBCA A, Roll No. 05',
         coverImg: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Meet Bagwe SYBCA A 05/Screenshot_20261006-184143 (1).png',
         body: `
-          <p>We are proud to celebrate <strong>Meet Gopal Bagwe</strong>, student of SYBCA A (Roll No. 05) at the BCA Department, Thakur College of Engineering &amp; Technology, for receiving an official <strong>Offer Letter</strong> for a competitive development role.</p>
+          <p>We are proud to celebrate <strong>Meet Bagwe</strong>, student of SYBCA A (Roll No. 05), for securing <strong>2nd Place</strong> in the Build Battle Coding Event 2026.</p>
           <div class="article-overlay-divider"></div>
-          <p>This achievement reflects Meet's consistent dedication, technical competence, and drive to excel in web engineering and professional software development early in his collegiate tenure.</p>
-          <p>The BCA Department faculty and TCET community congratulate Meet Gopal Bagwe for setting a strong example of proactive career development and student initiative.</p>
+          <p>The event challenged participants to design and build a website within a fixed time. Meet's result recognizes his creativity, coding skills, and problem-solving under pressure.</p>
           <div class="article-overlay-divider"></div>
-          <p><strong>Department:</strong> BCA, Thakur College of Engineering &amp; Technology, Mumbai<br/>
+          <p><strong>Department:</strong> BCA/MCA Department, Thakur College of Engineering &amp; Technology, Mumbai<br/>
           <strong>Year:</strong> Second Year BCA (SYBCA A)<br/>
-          <strong>Achievement:</strong> Professional Offer Letter Recognition</p>
+          <strong>Achievement:</strong> 2nd Place · Build Battle 2026<br/>
+          <strong>Date:</strong> 4 May 2026</p>
         `,
         files: [
-          { label: 'Official Offer Letter (PDF)', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Meet Bagwe SYBCA A 05/IAF Offer Letter Meet Gopal Bagwe.pdf' },
-          { label: 'Offer Letter Letterhead (Screenshot)', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Meet Bagwe SYBCA A 05/Screenshot_20261006-184143 (1).png' }
+          { label: 'Build Battle 2026 Certificate', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Meet Bagwe SYBCA A 05/Screenshot_20261006-184143 (1).png' },
+          { label: 'Build Battle 2026 Trophy', path: 'STUDENTS-20261021T045433Z-1-001/STUDENTS/Meet Bagwe SYBCA A 05/IMG_20261006_184428424.jpg' }
         ]
       },
       article2: {
@@ -3207,6 +3115,7 @@
       priya: {
         name: 'Ms. Priya Salunke',
         role: 'Assistant Professor · BCA/MCA Department',
+        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/priya salunke.jpeg',
         avatarText: 'PS',
         tag: 'Claude for Research · Research Grants · Applied Math',
         tagColor: '#1E88E5',
@@ -3263,7 +3172,7 @@
       sandeep: {
         name: 'Mr. Sandeep Vishvakarma',
         role: 'Assistant Professor · BCA/MCA Department',
-        photo: 'FACULTY -20261021T045428Z-1-001/FACULTY/sandeep.png',
+        photo: 'sandeep.png',
         tag: 'Best Paper Award · STTP Researcher',
         tagColor: '#4FC3F7',
         bio: `
@@ -3411,6 +3320,13 @@
         files: []
       }
     };
+
+    const facultyGrid = document.getElementById('faculty-grid');
+    ['faculty-card-priya', 'faculty-card-deepika', 'faculty-card-tamanna', 'faculty-card-jaynish', 'faculty-card-rinkle']
+      .forEach(id => {
+        const card = document.getElementById(id);
+        if (facultyGrid && card) facultyGrid.prepend(card);
+      });
 
     function filterFaculty(category, btn) {
       document.querySelectorAll('.faculty-filter-btn').forEach(b => b.classList.remove('active'));
